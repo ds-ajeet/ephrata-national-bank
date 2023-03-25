@@ -278,9 +278,8 @@ const country: Template<TemplateRenderProps> = ({
 
   return (
     <>
-    <Header _site={_site}/>
-    <Banner/>
-      <PageLayout global={_site}>
+    
+      <PageLayout _site={_site}>
         <BreadCrumbs
           name={regionNames.of(name)}
           address={address}
@@ -310,7 +309,7 @@ const country: Template<TemplateRenderProps> = ({
         </div>
 
       </PageLayout>
-      <Footer _site={_site}/>
+      
     </>
   );
 };

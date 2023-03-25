@@ -6,21 +6,23 @@ import Header from "./header";
 type Props = {
     title?: string;
     _site?: any;
-    global:any;
+  
     children?: React.ReactNode;
 };
   
   const PageLayout = ({
     title,
     _site,
-    global,
+   
     children,
   }: Props) => {
     console.log()
     return (
         <>
+         <Header _site={_site}/>
         
                 {children}
+                <Footer _site={_site}/>
       
         </>
     );

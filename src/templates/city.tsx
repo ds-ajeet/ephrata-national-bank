@@ -458,9 +458,8 @@ const City: Template<TemplateRenderProps> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-      <Header _site={_site}/>
-      <PhotoSlider _site={_site} />
-      <PageLayout global={_site}>
+     
+      <PageLayout _site={_site}>
         <BreadCrumbs
           name={name}
           address={address}
@@ -481,7 +480,7 @@ const City: Template<TemplateRenderProps> = ({
           </div>
         </div>
       </PageLayout>
-      <Footer _site={_site}/>
+     
     </>
   );
 };

@@ -42,17 +42,17 @@ const Footer = (props: any) => {
             <div className="store-inner flex flex-raw mt-8 text-white">
 				<span>
 					<h3>
-              {props._site.c_footerMember}
+              {props._site?.c_footerMember}
 			  </h3>
 			  </span>
               <div>
 				<div className=" mt-2">
-				{props._site.c_footerNavigation.map((res:any)=>{
+				{props._site?.c_footerNavigation.map((res:any)=>{
 					return(
 						<>
 						
 						<a href={res.link} > 
-							<span className="ml-2">
+							<span className="footerCta-privacy">
 								{res.label} |
 							</span>
 						</a>
@@ -62,7 +62,7 @@ const Footer = (props: any) => {
 				})}
 				</div>
 				<div className="text-white font-sm mt-2 ">
-					{props._site.c_footerCopyRight}
+					{props._site?.c_footerCopyRight}
 				</div>
               
               </div>
@@ -71,13 +71,21 @@ const Footer = (props: any) => {
 
           <div className="link-sec-footer ">
         
-						<div className="pt-8 ml-[5rem]">
-							<img src={props._site.c_footerEnb.url} alt="EnbLogo" width="120"/>
-							<div className="pt-8">
-								<span className="text-white font-bold">{props._site.c_corporateAddress}</span>
-								
-							</div>
-							<p className="text-white mt-4 font-bold">Toll Free:
+						<div className="pt-8 ml-[6rem] ">
+							<img src={props._site?.c_footerEnb.url} alt="EnbLogo" width="120"/>
+              </div>
+              <div className="pt-6 ml-[7rem] text-white font-sm">
+                <span>
+                  {props._site?.c_corporateOffice.office}
+                </span>
+              </div>
+              <div className="pt-4 text-white font-sm text-lg pl-[2rem]">
+                <span>
+                {props._site?.c_corporateOffice.address}
+                </span>
+              </div>
+							
+							<p className="text-white mt-4 font-bold pl-[4rem]">Toll Free:
 						
                 <Link type="button" href={`tel:+18777736605`} className=" btn notHighlight "
               data-ya-track={`viewStore `}
@@ -91,19 +99,19 @@ const Footer = (props: any) => {
            
            
            
-          </div>
+          {/* </div> */}
           <div className="copyright-bx">
            <div className="mt-[7rem] text-white text-3xl">
 			<strong>
 							
-			{props._site.c_footerCountact}
+			{props._site?.c_footerCountact}
 			</strong>
 		   </div>
 		   <div className="social-icon flex pt-4 gap-x-4">
-			{props._site.c_footerSocial.map((del1:any)=>(
+			{props._site?.c_footerSocial.map((del1:any)=>(
 				<>
 				<ul><li><a href="#">
-				<img src={del1.url} alt="sociallogo" width="35"/></a></li></ul>
+				<img src={del1.url} alt="sociallogo" width="55"/></a></li></ul>
 				
 				
 				</>

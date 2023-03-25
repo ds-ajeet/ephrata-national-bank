@@ -444,7 +444,7 @@ breadcrumbScheme.push({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-      <PageLayout global={_site}>
+      <PageLayout _site={_site}>
       <BreadCrumbs
             name={name}
             parents={dm_directoryParents}

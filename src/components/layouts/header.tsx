@@ -28,7 +28,7 @@ const Header = (props: any) => {
           <div className="container clear">
             <nav id="secondary-navigation" aria-label="site contact links">
               <ul id="menu-secondary-navigation" className="menu">
-                {props._site.c_headerCta.map((res: any) => {
+                {props._site?.c_headerCta.map((res: any) => {
                   return (
                     <>
                       <li
@@ -53,13 +53,13 @@ const Header = (props: any) => {
         <div className="headermenu">
           <div className="header flex ">
             <div className="headerlogo">
-              <img src={props._site.c_headermenus.logo.url} alt="logo" width="330"/>
+              <img src={props._site?.c_headermenus.logo.url} alt="logo" width="330"/>
               </div>
            
             <div className="header-secound menu ">
               <nav className="h-full pt-[2rem]">
                 <ul className="flex gap-x-7 h-full" style={{fontSize:"initial"}}>
-                {props._site.c_headermenus.cta.map((del:any, index:number)=>{
+                {props._site?.c_headermenus.cta.map((del:any, index:number)=>{
                   return(
                     <>
                     <li className="text-white">

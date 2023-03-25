@@ -279,9 +279,8 @@ const region: Template<TemplateRenderProps> = ({
   let bannerimage = c_banner_image && c_banner_image.image.url;
   return (
     <>
-        {/* <PageLayout global={_site}> */}
-          <Header _site={_site}/>
-          <Banner/>
+        <PageLayout _site={_site}>
+         
         <BreadCrumbs
             name={name}
             parents={dm_directoryParents}
@@ -307,8 +306,8 @@ const region: Template<TemplateRenderProps> = ({
           </div>
 
           
-        {/* </PageLayout> */}
-        <Footer _site={_site}/>
+        </PageLayout>
+        
     </>
   )
 }

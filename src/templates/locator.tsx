@@ -144,7 +144,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       type: "meta",
       attributes: {
         name: "twitter:title",
-        content: `${document.c_meta_title?document.c_meta_title:`Ephrata National Bank Near Me - Find Ephrata National Bank Branch Locator Here.`}`,
+        content: `${document.c_meta_title?document.c_meta_title:`Ephrata National Bank Near Me - Find Answer | Ephrata National Bank Branch Locator Here.`}`,
       },
     },
     {
@@ -201,8 +201,8 @@ const Locator: Template<TemplateRenderProps>= ({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-      <PageLayout global={_site}>
-        <Header _site={_site}/>
+      <PageLayout _site={_site}>
+       
         
         <SearchHeadlessProvider
           experienceKey={AnswerExperienceConfig.experienceKey}
@@ -218,7 +218,7 @@ const Locator: Template<TemplateRenderProps>= ({
      
         </SearchHeadlessProvider>
       
-   <Footer _site={_site}/>
+   
       </PageLayout>
       </AnalyticsScopeProvider>
       </AnalyticsProvider>
