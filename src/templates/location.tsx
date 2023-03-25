@@ -47,6 +47,7 @@ import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
+import Email from "../components/locationDetail/coutactemail";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -69,6 +70,9 @@ export const config: TemplateConfig = {
       "yextDisplayCoordinate",
       "displayCoordinate",
       "cityCoordinate",
+      "c_about",
+      "c_countact",
+      "photoGallery",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
@@ -277,6 +281,8 @@ const Location: Template<ExternalApiRenderData> = ({
     displayCoordinate,
     cityCoordinate,
     name,
+    c_about,
+    c_countact,
     dm_directoryParents
   } = document;
 
@@ -451,6 +457,9 @@ breadcrumbScheme.push({
             baseUrl={relativePrefixToRoot}
             address={address}
           ></BreadCrumbs>
+      
+          <PhotoGallery photoGallery={photoGallery}/>
+          <About c_about={c_about}/>
 
 
       <div className="container">
@@ -487,6 +496,7 @@ breadcrumbScheme.push({
           </div>
           
         </div>
+        <Email c_countact={c_countact}/>
 
       </PageLayout>
       </AnalyticsScopeProvider>

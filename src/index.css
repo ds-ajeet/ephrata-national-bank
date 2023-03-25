@@ -39,11 +39,11 @@ h1 {@apply text-4xl font-normal;}
 h2 {  @apply text-2xl font-normal;}
 .centered-container {  @apply mx-auto px-5 md:px-14 max-w-screen-xl;}
 .container-lg{  @apply mx-auto px-5 md:px-14 max-w-[120rem];}
-.container-custom{ @apply max-w-[87.5rem] mx-auto px-4 lg:px-6 xl:px-0}
+.container-custom{ @apply max-w-[81.324rem] mx-auto px-4 lg:px-6 xl:px-0 bg-[#fff]}
 .container{ @apply px-4 lg:px-5 max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl}
 .container{
   width: 100%;
-  /* max-width: 1140px; */
+  max-width: 1140px;
 }
 #root{
 background-image: url("https://www.epnb.com/wp-content/themes/epnb/img/background-tile.png");
@@ -381,9 +381,9 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
 
-.about-sec{@apply  lg:bg-light-grey relative px-5 mt-0 lg:mt-7 pt-0 lg:py-12 lg:px-14   }
-.about-sec .about-content{@apply mt-5 lg:mt-0 w-full overflow-visible lg:w-[57.6%] xl:w-[50.6%] ml-auto lg:pr-10 lg:pb-12 lg:pt-6 xl:pt-12 flex items-center}
-.about-sec .about-content h2{@apply hidden !text-left lg:block font-medium text-red font-second-main-font  text-[1.625rem]  }
+.about-sec{@apply   relative px-5 mt-0 /*lg:mt-7*/ pt-0  lg:px-14   }
+.about-sec .about-content{@apply mt-5 lg:mt-0 w-full overflow-visible lg:w-[57.6%] xl:w-[50.6%] /*ml-auto*/ lg:pr-10 lg:pb-12 lg:pt-6 xl:pt-12 /*flex*/ items-center}
+.about-sec .about-content h2{@apply hidden !text-left lg:block font-medium text-[#4c4d4f] font-second-main-font  text-[1.625rem]  }
 .about-inner-sec h2{@apply block text-center w-full  pb-6 lg:pb-0 lg:hidden font-medium text-red font-second-main-font  text-[1.625rem]}
 .about-inner-sec img{@apply max-w-full w-full lg:w-auto}
 .about-sec .content-center{ @apply flex lg:inline-block justify-center }
@@ -407,9 +407,9 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .gallery-sec{@apply  m-0 relative  }
 .gallery-bg{@apply absolute inset-0 -z-10 }
 .gallery-bg img{@apply  w-full h-full }
-.photos-row{@apply grid gap-3 md:grid-cols-2  lg:grid-cols-3}
+/* .photos-row{@apply grid gap-3 md:grid-cols-2  lg:grid-cols-3} */
 .image-frame{@apply !m-2 border p-3 border-dashed border-gray-dark w-full  }
-.photos-row img{@apply w-full  rounded-none object-cover h-80  }
+.photos-row img{@apply w-full  rounded-none object-cover /*h-80*/}
 
 /* services sec */
 .services-sec{@apply bg-white w-full pt-8 pb-16 md:py-9 }
@@ -707,3 +707,115 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .footerCta-privacy{
   padding: 8px 9px 0px 0px;
 }
+.page-content span h1{
+  
+    padding: 25px;
+    border-bottom: 3px solid #d21242;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+    color: #004990;
+    vertical-align: middle;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* about sction */
+.contentsss{
+  padding: 25px;
+}
+.location .location-details {
+  margin-bottom: 25px;
+}
+.location .location-established {
+  font-style: italic;
+  color: #004990;
+  margin-bottom: 8px;
+}
+.location .location-established, .location .location-manager {
+  font-weight: 400;
+  font-size: 1.4375rem;
+  line-height: 1.4375rem;
+  display: block;
+}
+strong {
+  font-family: myriad-pro,Arial,Helvetica,sans-serif;
+
+}
+#page-content p, #page-content ul, #page-content ol {
+  color: #4c4d4f;
+  margin: 0 0 16px 0;
+}
+
+.about-content .location-established{
+  color: #004990;
+  font-style: italic;
+  margin: 0px 8px 0px 31px;
+  font-size: 30px;
+}
+.about-discription p{
+  font-size: 16px;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+/* djkfvhdsoghdf countact skdfh */
+#call-to-action {
+  padding: 35px 0;
+  background-color: #d2e8ee;
+}
+
+#call-to-action .container {
+  text-align: center;
+}
+
+#call-to-action strong {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: #004990;
+  margin: 0 25px 0 0;
+  font-family: myriad-pro-condensed, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+#call-to-action ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#call-to-action ul li {
+  display: inline-block;
+}
+
+#call-to-action ul li a {
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #004990;
+  padding: 15px 25px;
+  font-family: myriad-pro-condensed, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.4375rem;
+  line-height: 1.4375rem;
+  text-decoration: none;
+}
+
+#call-to-action ul li+li {
+  margin-left: 15px;
+}
+
