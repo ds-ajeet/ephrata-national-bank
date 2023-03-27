@@ -44,7 +44,7 @@ export default function Nearby(props: any) {
           },
         }}
       > */}
-        {neabyData.map((location: any, index: Number) => {
+        {neabyData.map((location: any, index: number) => {
 
           // let url = "";
           // var name: any = location.data.name?.toLowerCase();
@@ -74,11 +74,11 @@ export default function Nearby(props: any) {
                         rel="noopener noreferrer">{location.data.name}</Link></h2>
 
                     </div>
-                    <div className="icon-row content-col">
+                    <div className="icon-row content-col font-bold">
                       <Address address={location.data.address} />
                     </div>
                     <div className="icon-row closeing-div">
-                    {location.data.hours?
+                    {/* {location.data.hours?
                     <div className="flex open-now-string items-center " data-id={`main-shop-${location.data.id}`} >
                       <OpenClose timezone={location.data.timezone} hours={location.data.hours} deliveryHours={location.data.hours}></OpenClose>
                     </div>:
@@ -90,7 +90,7 @@ export default function Nearby(props: any) {
                    Closed
                    </div>
                    </div>
-                    }
+                    } */}
                     </div> 
                     <div className="button-bx">
                       <Link className="btn" href={`/${location.data.id}`}
@@ -98,8 +98,8 @@ export default function Nearby(props: any) {
                        eventName={`viewstore-${location.data.name}`}
                        rel="noopener noreferrer">
                         {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
-                        STORE DETAILS</Link>
-                      <GetDirection buttonText={props.c_getDirectionsCTAText?props.c_getDirectionsCTAText:"Get directions"} address={location.data.address} latitude={location.data.displayCoordinate ? location.data.displayCoordinate.latitude : location.data.yextDisplayCoordinate.latitude} longitude={location.data.displayCoordinate ? location.data.displayCoordinate.longitude : location.data.yextDisplayCoordinate.longitude} />
+                        Branch DETAILS</Link>
+                      {/* <GetDirection buttonText={props.c_getDirectionsCTAText?props.c_getDirectionsCTAText:"Get directions"} address={location.data.address} latitude={location.data.displayCoordinate ? location.data.displayCoordinate.latitude : location.data.yextDisplayCoordinate.latitude} longitude={location.data.displayCoordinate ? location.data.displayCoordinate.longitude : location.data.yextDisplayCoordinate.longitude} /> */}
                       
                     </div>
                   </div>

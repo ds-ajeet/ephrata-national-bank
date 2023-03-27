@@ -294,7 +294,9 @@ const DayRow = (props: DayRow) => {
 
 
   return (
+   
     <tr className={currentDay} key={key}>
+      
       {Status ? (
         <td className="dayName" key={key}>
           <span className="checked"></span> {dayName}*
@@ -313,6 +315,7 @@ const DayRow = (props: DayRow) => {
         </td>
       ) : (
         <td className="dayName" key={key}>
+         
           <span className="checked"></span> {dayName}
         </td>
       )}

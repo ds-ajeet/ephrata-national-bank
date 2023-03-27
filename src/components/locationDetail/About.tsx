@@ -1,5 +1,6 @@
 import { Link } from "@yext/pages/components";
 import * as React from "react";
+
 // import abbanner from "../../images/ab-banner.jpg"
 // import dt12 from "../../images/dtl2.jpg"
 // import PhotoSlider from "./PhotoSlider"
@@ -19,7 +20,7 @@ export default function About(props: any) {
     <>
       <div className="about-sec ">
         <div className="container-custom">
-          <div className="about-inner-sec grid grid-cols-2">
+          <div className="about-inner-sec flex">
             <div className="about-content " >
               <strong className="location-established">
                 {props.c_about.labelYear}
@@ -35,7 +36,9 @@ export default function About(props: any) {
               <p>{props.c_about.descriptionthree}</p>
               <p>{props.c_about.descriptionFour}</p>
             </div>
+          
             </div>
+            
             
             <div className="bg-red">fdg</div>
           </div>

@@ -3,6 +3,7 @@ import logo from "../../images/mgmlogo.jpg";
 import SearchBar from "../locationDetail/search";
 import FilterSearch from "../locatorPage/FilterSearch";
 import { StaticData } from "../../../sites-global/staticData";
+import { Link } from "@yext/pages/components";
 type props = {
   data1: any;
   data: any;
@@ -28,6 +29,7 @@ const Header = (props: any) => {
           <div className="container clear">
             <nav id="secondary-navigation" aria-label="site contact links">
               <ul id="menu-secondary-navigation" className="menu">
+           
                 {props._site?.c_headerCta.map((res: any) => {
                   return (
                     <>
@@ -42,11 +44,20 @@ const Header = (props: any) => {
                         >
                           <span>{res?.label}</span>
                         </a>
+                        
                       </li>
                     </>
                   );
                 })}
+                   <Link type="button" href={`tel:+18777736605`} className=" btn notHighlight "
+              data-ya-track={`viewStore `}
+              eventName={`viewStore`}
+              rel="noopener noreferrer"
+              >
+                <span className="teliphone-footer ml-2">(877) 773-6605</span>
+              </Link>
               </ul>{" "}
+            
             </nav>
           </div>
         </div>

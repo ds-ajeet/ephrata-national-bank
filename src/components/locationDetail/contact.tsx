@@ -26,19 +26,24 @@ const Contact = (props: any) => {
   } = props;
   return (
     <>
+     <div className="map-sec">
+          <CustomMap prop={yextDisplayCoordinate} />
+        </div>
       <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
+        {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
 
         <div className="icon-row content-col">
           <div className="icon">
             {" "}
-            <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
+            {/* <img className=" " src={mapimage} width="20" height="20" alt="mapimage" /> */}
           </div>
           <div className="  address-text notHighlight">
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
-            <div>{address.city}</div>
-            <div>{address.postalCode}</div>
+            <div>{address.city}
+            <span className="ml-2">{address.region}</span>
+            <span className="ml-2">{address.postalCode}</span></div>
+            
           </div>
         </div>
 
@@ -46,9 +51,11 @@ const Contact = (props: any) => {
           <div className="icon-row">
             <div className="icon">
               {" "}
-              <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" />
+              
+              {/* <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" /> */}
             </div>
             <div className="content-col">
+            phone:
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
                 {phone}
               </a>
@@ -69,12 +76,10 @@ const Contact = (props: any) => {
           </li>
         </ul>
 
-        <div className="map-sec">
-          <CustomMap prop={yextDisplayCoordinate} />
-        </div>
+       
 
       </div>
-
+{/* 
       {hours && typeof hours.monday != "undefined" ? (
         <div className="hours">
           <div className="hours-sec">
@@ -93,10 +98,6 @@ const Contact = (props: any) => {
               ) : (
                 ""
               )}
-
-              {/* <div className="title-with-link-1">
-        <h4 className="box-title">{"Store Hours"}</h4>        
-      </div> */}
               {hours && (
                 <Hours
                   title={"Store Opening Hours"}
@@ -110,7 +111,7 @@ const Contact = (props: any) => {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </>
   );
 };

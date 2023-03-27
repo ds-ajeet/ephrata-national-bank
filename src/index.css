@@ -39,7 +39,7 @@ h1 {@apply text-4xl font-normal;}
 h2 {  @apply text-2xl font-normal;}
 .centered-container {  @apply mx-auto px-5 md:px-14 max-w-screen-xl;}
 .container-lg{  @apply mx-auto px-5 md:px-14 max-w-[120rem];}
-.container-custom{ @apply max-w-[81.324rem] mx-auto px-4 lg:px-6 xl:px-0 bg-[#fff]}
+.container-custom{ @apply max-w-[81.324rem] mx-auto px-4 lg:px-6 xl:px-0 /*bg-[#fff]*/}
 .container{ @apply px-4 lg:px-5 max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl}
 .container{
   width: 100%;
@@ -169,7 +169,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location-with-filter h1{@apply text-lg font-normal text-[#004990] my-0 font-second-main-font text-[1.75rem] mt-4 ml-2}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
-.button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+.button-bx{@apply flex flex-col sm:flex-row mt-[1.3rem] justify-around  ml-6}
 .button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
    px-2 transition-all duration-300 hover:bg-[#D21242] text-gray-dark
     hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
@@ -181,7 +181,7 @@ body .ps:hover .ps__rail-y{@apply opacity-100}
 body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
 body .ps__thumb-y{ @apply bg-gray-dark opacity-100 right-1 w-2}
 body .ps__rail-y:hover .ps__thumb-y{ @apply w-2 bg-gray-dark}
-table.day-hrs{  @apply border-none w-full mb-4}
+table.day-hrs{  @apply border-none w-[70%] /*full mb-4*/ ml-10 mt-12}
 table.day-hrs td{ @apply   text-right  }
 .storelocation-openCloseTime table.day-hrs{  @apply bg-white xl:max-w-md 2xl:max-w-lg border   mx-auto xl:right-3.5 relative}
 .storelocation-openCloseTime table.day-hrs .dayName{  @apply w-auto}
@@ -241,10 +241,10 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 
 
 .location-name-miles{
-  @apply relative pr-0 md:pr-[6.25rem] leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
+  @apply relative pr-0 /*md:pr-[6.25rem]*/ leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
 }
 .location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
-.location-name-miles h2 a{ @apply text-[1.375rem] text-gray font-second-main-font}
+.location-name-miles h2 a{ @apply text-[1.375rem] text-[#d21242] font-second-main-font}
 
 .location-name-miles .distance{
   @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
@@ -303,7 +303,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .pagination-conatiner{ @apply mt-4}
 .nearby-btn .btn{ @apply !w-full}
 .nearby-card .button-bx{@apply ml-0 lg:ml-0 flex-row justify-start }
-.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-Dark-red hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
+.nearby-card .button-bx .btn{@apply w-[13.75rem] bg-[#004990] hover:bg-[#d21242] font-second-main-font py-2.5  border-none text-white  }
 .nearby-card .button-bx .btn.notHighligh{@apply w-full md:w-[48%] ml-2 bg-white justify-start  border-none text-black underline  }
 .nearby-card .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto hover:no-underline}
 .nearby-card .button-bx .btn:hover svg{@apply !fill-red }
@@ -349,8 +349,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .banner-text h1{ @apply text-red text-[2.4375rem] mb-3  mt-8 font-second-main-font}
 
 /* address sec */
-.location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
-.address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
+.location-information{  @apply flex flex-wrap /*w-full*/ justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
+.address-main-sec{@apply /*bg-red*/ px-4 md:px-6  md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-main-sec .map-sec{ @apply block h-72 -ml-4 w-[100vw] md:hidden}
 .box-title{@apply font-second-main-font text-[1.3125rem] md:text-[1.375rem] mb-4}
@@ -378,11 +378,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
 .address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
-.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
+.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[30rem] /*lg:h-auto*/  /*lg:w-[calc(100%_-_51.625rem)]*/}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
 
 .about-sec{@apply   relative px-5 mt-0 /*lg:mt-7*/ pt-0  lg:px-14   }
-.about-sec .about-content{@apply mt-5 lg:mt-0 w-full overflow-visible lg:w-[57.6%] xl:w-[50.6%] /*ml-auto*/ lg:pr-10 lg:pb-12 lg:pt-6 xl:pt-12 /*flex*/ items-center}
+.about-sec .about-content{@apply mt-5 lg:mt-0 /*w-full*/ overflow-visible /*lg:w-[57.6%] xl:w-[50.6%]*/ /*ml-auto*/ lg:pr-10 lg:pb-12 lg:pt-6 xl:pt-12 /*flex*/ items-center}
 .about-sec .about-content h2{@apply hidden !text-left lg:block font-medium text-[#4c4d4f] font-second-main-font  text-[1.625rem]  }
 .about-inner-sec h2{@apply block text-center w-full  pb-6 lg:pb-0 lg:hidden font-medium text-red font-second-main-font  text-[1.625rem]}
 .about-inner-sec img{@apply max-w-full w-full lg:w-auto}
@@ -456,15 +456,15 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .view-more{  @apply text-center mt-5}
 
 /* near by */
-.nearby-sec{@apply bg-transparent md:bg-light-grey w-full pt-7 pb-0 md:py-[3.75rem] }
-.nearby-sec-inner{@apply sm:mx-auto sm:max-w-[33.5rem] lg:mx-auto lg:max-w-none flex flex-col lg:flex-row gap-4 justify-center pb-0 xl:pb-0 }
+.nearby-sec{@apply bg-transparent  w-full pt-7 pb-0 md:py-[3.75rem] }
+.nearby-sec-inner{@apply sm:mx-auto sm:max-w-[33.5rem] lg:mx-auto lg:max-w-none /*flex flex-col*/ grid grid-cols-3 lg:flex-row gap-12 justify-center pb-0 xl:p-[3rem] }
 .nearby-sec .splide__slide{@apply xl:px-4}
-.nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 border border-box-border
+.nearby-card{@apply w-full bg-[#d2e8ee] overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-0 /*6*/  mb-0 lg:mt-0  lg:relative p-3 md:p-5 border border-box-border
 }
 .nearby-card .red-dot{ @apply !justify-start}
 .nearby-card .icon-row{ @apply pl-0}
 .nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
-.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black }
+.nearby-card h2 a{ @apply font-bold  text-[1.2rem] text-[#d21242] }
 .nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
 .near-address{ @apply flex mt-2 items-start min-h-[90px]}
 .nearby-card .address { @apply text-lg }
@@ -486,7 +486,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 /* footer sec */
 /* footer sec */
-.site-footer{  @apply pt-8 lg:pt-0}
+.site-footer{  @apply pt-8 lg:pt-0 border-t-8 border-[#a8d6e2]}
 .site-footer .container{@apply flex flex-col mx-auto flex-wrap justify-between lg:mt-10 lg:flex-row px-0  }
 .store-locator{ @apply flex lg:block justify-center w-full w-[30rem] border-b border-border-light lg:border-none px-5 }
 .link-sec-footer{ @apply w-full lg:w-[25%] pl-0 lg:pl-0 md:pr-0 lg:pr-5 xl:pr-7   flex flex-col flex-wrap  text-left  justify-between text-black	lg:flex-row}
@@ -571,7 +571,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   @apply mt-2 md:mt-0
 }
 
-.city-page .nearby-sec-inner{@apply flex flex-col md:flex-row gap-4 flex-wrap justify-center pb-0 xl:pb-0 max-w-none }
+.city-page .nearby-sec-inner{@apply flex flex-col md:flex-row gap-3 flex-wrap justify-center pb-0 xl:pb-0 max-w-none }
 
 .city-page .nearby-card{@apply w-full md:w-[49%]  xl:w-[32%] bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-0  mb-0 lg:mt-0  lg:relative p-3 md:p-5 border border-box-border
 }
