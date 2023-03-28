@@ -266,7 +266,7 @@ const region: Template<TemplateRenderProps> = ({
         <a
           key={entity.slug}
           // href={stagingBaseurl  + detlslug}
-          href={detlslug}
+          href={detlslug.toLowerCase()}
         >
           {entity.name} ({entity.dm_baseEntityCount})
         </a>
