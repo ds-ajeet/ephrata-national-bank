@@ -247,7 +247,7 @@ const region: Template<TemplateRenderProps> = ({
           } else {
             detlslug1 = slug+"/"+entity.slug+"/"+res.id+".html";
             // detlslug1 = `/${res.slug.toString()}.html`;
-            console.log(detlslug1,"d1state")
+            // console.log(detlslug1,"d1state")
           }
           
 

@@ -122,7 +122,9 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     url += `${document.slug.toString()}.html`;
   }
   return url;
+
 };
+
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
  *
@@ -234,7 +236,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           name: "twitter:title",
           content: document.c_meta_title
             ? document.c_meta_title
-            : `${document.name} Store of MGM Timber`,
+            : `${document.name} Store of Ephrata National Bank`,
         },
       },
       {

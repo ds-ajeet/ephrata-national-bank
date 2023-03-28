@@ -253,7 +253,7 @@ const City: Template<TemplateRenderProps> = ({
     // let key: any = Object.keys(entity.hours)[0];
     var url = "";
     // var name: any = entity.name.toLowerCase();
-    var name: any = "/"+document.dm_directoryParents[1].slug+"/"+dm_directoryParents[2].slug+"/"+document.slug + "/"+ entity.id;
+    var name: any = "/"+document.dm_directoryParents[1].slug+"/"+dm_directoryParents[2].slug+"/"+document.slug + "/"+ entity.id.toLowerCase();
 
     var region: any = entity.address.region.toLowerCase();
     var initialregion: any = region.toString();
