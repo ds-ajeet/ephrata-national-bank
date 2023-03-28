@@ -322,6 +322,7 @@ function UnwrappedGoogleMaps({
           const resultelement = document.querySelectorAll(
             `.result-list-inner-${index + 1}`
           );
+         
           for (let index = 0; index < resultelement.length; index++) {
             resultelement[index].classList.add("active");
             resultelement[index].classList.add("fixed-hover");
@@ -336,6 +337,7 @@ function UnwrappedGoogleMaps({
         infoWindow.current.open(map, markers1.current[i]);
       });
     });
+    
 
     markers1.current[i].addListener("mouseover", () => {
       if (hover) {

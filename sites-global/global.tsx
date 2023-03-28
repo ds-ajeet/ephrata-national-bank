@@ -20,8 +20,8 @@ export const conversionDetailsPhone = {
   cv: "2",
 };
 export const center_latitude=
-47.116386;
-export const center_longitude=-101.299591;
+40.286525;
+export const center_longitude=-77.6092895;
 
 
 

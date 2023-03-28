@@ -327,7 +327,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
             <a className="btn mapBtn" href="javascript:void(0);" onClick={addClass}> Map View</a>
           </div>
         </div>
-        <div className=" map-section pt-[1rem]">
+        <div className=" map-section">
           <GoogleMaps
             apiKey={googleApikey}
             centerLatitude={centerLatitude}
@@ -339,10 +339,10 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
         </div>
         
         <div className=""><ResultsCount
-            customCssClasses={{ container: "text-[#004990] text-lg" }}
+            customCssClasses={{ container: "text-[#004990] text-lg " }}
           />
           </div>
-        <div className="left-listing mt-2 h-[39rem] bg-white">
+        <div className="left-listing  h-[46rem] bg-white">
         
         
 
@@ -353,7 +353,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                 <VerticalResults
                   displayAllOnNoResults={false}
                   CardComponent={LocationCard}
-                  locationResults={locationinbuit}
+                  locationResults={locationResults}
                   customCssClasses={{
                     container:
                       "result-list flex flex-col scroll-smooth  overflow-auto",

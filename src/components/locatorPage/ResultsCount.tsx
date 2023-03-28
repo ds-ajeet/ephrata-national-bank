@@ -10,9 +10,10 @@ interface ResultsCountCssClasses {
 }
 
 const builtInCssClasses: ResultsCountCssClasses = {
-  container: 'pb-7 md:pb-4 mt-2',
+  container: 'bg-white border-l-2 border-[#d8d8d8]',
   text: 'text-2xl text-[#004990] font-bold',
   number: 'text-large font-bold'
+  
 }
 
 interface Props {
@@ -51,7 +52,7 @@ export function ResultsCountDisplay({
 
   const messageArray = [
     // 'Showing ',
-    offset + 1,
+    1,
     ' to ',
     offset + resultsLength,
     ' of ',

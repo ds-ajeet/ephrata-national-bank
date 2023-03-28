@@ -112,8 +112,8 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 
   
 .locator-main{ @apply  mt-10  align-bottom w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
-.left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left border-2  rounded-xl }
-.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right}
+.left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left border-2  border-[#d8d8d8] }
+.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  /*md:pl-8*/ float-right}
 .locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
 .hero-section .hero-content .banner-text.banner-dark-bg{ @apply  border-l-0 inline-block flex flex-col items-center p-4      rounded-lg backdrop-blur-sm bg-Dark-red mx-auto w-[340px] sm:w-[500px] px-2.5 text-center}
 .hero-section .hero-content .banner-text.banner-dark-bg h1{  @apply text-2xl md:text-[1.75rem] mb-1.5 font-normal}
@@ -133,11 +133,11 @@ body:not(.mapView) .mobile-btns .btn.listBtn{  @apply text-Dark-red border-t-0 b
 body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l-0 border-r-0 !border-b-2 !border-red  text-lg font-second-main-font !capitalize hover:bg-transparent  }
 
 /* left listing */
-.search-bx{@apply  mb-0  z-20 px-4   pt-0 pb-2 text-gray-dark /*float-left*/ w-full   border-2 border-[#d8d8d8]   rounded-xl }
+.search-bx{@apply  mb-0  z-20   pt-0 pb-2 text-gray-dark /*float-left*/ w-full   border-2 border-[#d8d8d8]}
 .search-bx button{ @apply float-left mr-0 relative text-white text-xs sm:text-sm }
 .search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg}
 .search-bx button.useMyLocation .icon{@apply mr-1.5}
-.search-field{@apply flex relative  }
+.search-field{@apply flex relative  mx-[1rem]}
 .search-bx .search-btn{
   background-color: rgb(0, 57, 90);
 }
@@ -166,19 +166,21 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start sm:justify-end mr-12  flex-col sm:flex-row}
 .location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
-.location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5}
-.location-with-filter h1{@apply text-lg font-normal text-[#004990] my-0 font-second-main-font text-[1.75rem] mt-4 ml-2}
+.location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5 border-b-4 border-b-[#d21242] pb-4}
+.location-with-filter h1{@apply text-lg font-normal text-[#004990] my-0 font-bold text-[2rem] mt-4 ml-8}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
-.button-bx{@apply flex flex-col sm:flex-row mt-[1.3rem] justify-around  ml-6}
+.button-bx{@apply flex flex-col sm:flex-row mt-[0.5rem] justify-around  ml-6}
 .button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
    px-2 transition-all duration-300 hover:bg-[#D21242] text-gray-dark
     hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
 .button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
 .button-bx .btn:hover svg{@apply fill-white  }
-.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_11rem)]}
-.scrollbar-container.ps--active-y{ @apply pr-6 overflow-auto rounded-xl}
+.scrollbar-container{@apply md:pr-3 /*md:!h-[calc(100vh_-_11rem)]*/}
+
+/* .scrollbar-container.ps--active-y{ @apply pr-6 overflow-auto rounded-xl} */
 body .ps:hover .ps__rail-y{@apply opacity-100}
+
 body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
 body .ps__thumb-y{ @apply bg-gray-dark opacity-100 right-1 w-2}
 body .ps__rail-y:hover .ps__thumb-y{ @apply w-2 bg-gray-dark}
@@ -264,7 +266,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
   @apply absolute top-0 left-0
 }
 .icon-row .icon img, .icon-row .icon svg{
-  @apply w-5 mr-0
+  @apply w-6 mr-0
 }
 .icon-row h6{
   @apply font-normal text-red m-0 leading-5 text-base md:text-lg md:leading-5 mb-1.5
@@ -479,7 +481,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .newsletter-section{ @apply bg-newslettter_bg_mob lg:bg-newslettter_bg py-6 mt-10 w-full inline-block }
 .newsletter-inner{@apply  max-w-[25.75rem] mx-auto px-4  }
 .newsletter-section p{@apply text-white text-sm md:text-lg text-center md:text-left }
-.search-field-bx{@apply flex mt-6 }
+.search-field-bx{@apply flex mt-6}
 .search-field-bx input{@apply bg-white text-gray-dark w-full px-3 py-3 text-sm outline-none flex-[1_1_auto] }
 .search-field-bx button{@apply bg-red hover:bg-Dark-red text-white py-3 px-4 text-sm flex-[1_1_auto] whitespace-nowrap }
 .newsletter-logo{@apply    mx-auto w-full mb-6 }
@@ -818,6 +820,10 @@ strong {
 
 #call-to-action ul li+li {
   margin-left: 15px;
+}
+.scrollbar-container.ps.ps--active-y {
+
+overflow: overlay !important;
 }
 
 

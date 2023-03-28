@@ -70,8 +70,9 @@ function opentime(e: any) {
         <div className="center-column">
           <div className="lp-param-results lp-subparam-hours">
             <div className="location-name-miles icon-row">
-              <div className="icon text-black relative"> <img className=" " src={redmapimage} width="20" height="20"
-                alt={''} /><span className="map-count">D</span></div>
+              <div className="icon text-black relative"> <img className=" " src={redmapimage} width="30" height="30"
+                alt={''} /><span className="map-count  text-lg">E</span></div>
+                {/* {result.index}  */}
 
               <h2><Link className="inline-block notHighlight"
                data-ya-track={`viewDetail -${result.rawData.name}`}

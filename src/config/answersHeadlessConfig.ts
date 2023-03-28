@@ -1,6 +1,7 @@
 
 export const AnswerExperienceConfig = {
   locale: "en",
+  limit:6,
   apiKey : "85f69c5d28211e425485a23fd439120f",
   verticalKey : "locations",
   experienceKey : "ephrata-national-bank",
