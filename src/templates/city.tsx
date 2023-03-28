@@ -221,7 +221,6 @@ const City: Template<TemplateRenderProps> = ({
     c_metaTitle,
     _site,
   } = document;
-  console.log(document.slug,"kkk")
   var address;
   var c_companyrn;
   var c_footerLinks;
@@ -243,7 +242,6 @@ const City: Template<TemplateRenderProps> = ({
   });
 
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
-    console.log(entity,"entityslug")
     var origin: any = null;
     if (entity.address.city) {
       origin = entity.address.city;
@@ -256,7 +254,7 @@ const City: Template<TemplateRenderProps> = ({
     var url = "";
     // var name: any = entity.name.toLowerCase();
     var name: any = "/"+document.dm_directoryParents[1].slug+"/"+dm_directoryParents[2].slug+"/"+document.slug + "/"+ entity.id;
-    console.log(name,"Cityname")
+
     var region: any = entity.address.region.toLowerCase();
     var initialregion: any = region.toString();
     var finalregion: any = initialregion.replaceAll(" ", "-");
@@ -269,8 +267,9 @@ const City: Template<TemplateRenderProps> = ({
     if (entity.slug) {
       url = `${result}.html`;
     } else {
-      url = `${entity.slug.toString()}.html`;
+      url = `/${entity.slug.toString()}.html`;
     }
+    console.log(url,"url city page")
 
 
 

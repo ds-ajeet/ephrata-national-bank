@@ -2,10 +2,10 @@ export const stagingBaseurl = "https://main-usually--assistant--coyote-sbx-pgsde
 export const cookieText =
   " We use cookies on our website. Some are essential to enable to site to function, others are analytical and help us monitor site usage, whilst some are used for the personalisation of ads. You are free to manage this via your browser setting at any time. To learn more about how we use these cookies, please see our ";
 export const cookiesUrl = "https://www.matalan.co.uk/corporate/cookies";
-export const baseuRL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=500"
-// export const apikey_for_entity = "c6e25761c0c1c4d0865f27e36665d5a4"
+export const baseuRL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500"
+export const apikey_for_entity = "75126a9f9481e884b32c2a8852a2cc30"
 export const favicon="https://www.epnb.com/wp-content/themes/epnb/img/logo/logo-without-tagline.svg";
-export const apiKey = "461e95a97fb7c9c7150d2455947d27a0";
+// export const apiKey = "461e95a97fb7c9c7150d2455947d27a0";
 export const googleApikey = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
 export const regionNames = new Intl.DisplayNames(['en'], { type: 'region' })
 export const AnalyticsEnableDebugging  = true;
