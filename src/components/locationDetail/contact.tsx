@@ -29,15 +29,15 @@ const Contact = (props: any) => {
      <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
         </div>
-      <div className="address-main-sec">
+      <div className="address-main-sec pt-8">
         {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
 
-        <div className="icon-row content-col">
+        <div className="icon-rows content-col flex">
           <div className="icon">
             {" "}
-            {/* <img className=" " src={mapimage} width="20" height="20" alt="mapimage" /> */}
+            <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
           </div>
-          <div className="  address-text notHighlight">
+          <div className="  address-text notHighlight ml-4">
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
             <div>{address.city}
@@ -48,14 +48,14 @@ const Contact = (props: any) => {
         </div>
 
         {phone ? (
-          <div className="icon-row">
+          <div className="icon-rows flex mt-2">
             <div className="icon">
               {" "}
               
-              {/* <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" /> */}
+              <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" />
             </div>
-            <div className="content-col">
-            phone:
+            <div className="content-col ml-4">
+           
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
                 {phone}
               </a>

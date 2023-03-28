@@ -80,6 +80,8 @@ export const config: TemplateConfig = {
       "cityCoordinate",
       "c_about",
       "c_countact",
+      "c_faq.question",
+      "c_faq.answer",
       "photoGallery",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
@@ -264,7 +266,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
       : data.document.displayCoordinate.longitude
   }`;
 
-  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=10&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
+  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=9&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
   // console.log(url);
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
@@ -295,6 +297,7 @@ const Location: Template<ExternalApiRenderData> = ({
     description,
     additionalHoursText,
     timezone,
+    c_faq,
     yextDisplayCoordinate,
     displayCoordinate,
     cityCoordinate,
@@ -494,13 +497,16 @@ const Location: Template<ExternalApiRenderData> = ({
               <p>{document.c_about.descriptionthree}</p>
               <p>{document.c_about.descriptionFour}</p>
             </div>
-            {/* <Hours
+            <div className="store-open-hours">
+              <h4 className="box-title">{"Branch Opning Details"}</h4>
+                <Hours
                   title={"Store Opening Hours"}
                   additionalHoursText={additionalHoursText}
                   hours={hours}
-                 
-                /> */}
-          
+                  // c_specific_day={c_specific_day}
+                />
+                </div>
+             
             </div>
             
             
@@ -552,6 +558,10 @@ const Location: Template<ExternalApiRenderData> = ({
         </div>
       </div>
                 </div>
+                {c_faq ? <div className="w-full  pt-8">
+           <h4 className="sec_heading  text-[30px] text-center pt-4">How can we help ?</h4>
+           { <Faq prop={c_faq} c_fAQsCta={document.c_fAQsCta}/> }
+         </div> : <></>}
                 
                
             
@@ -569,7 +579,7 @@ const Location: Template<ExternalApiRenderData> = ({
               <div className="container bg-white">
                  {/* <div className="sec-title">
                   <h2 className="">{StaticData.NearStoretext}</h2>
-                </div> 
+                </div>  */}
                 <div className="nearby-sec-inner">
                   {yextDisplayCoordinate ||
                   cityCoordinate ||
@@ -578,7 +588,7 @@ const Location: Template<ExternalApiRenderData> = ({
                   ) : (
                     ""
                   )}
-                </div> */}
+                </div>
               </div>
             </div>
             <Email c_countact={c_countact} />

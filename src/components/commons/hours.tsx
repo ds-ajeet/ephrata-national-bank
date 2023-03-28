@@ -295,10 +295,10 @@ const DayRow = (props: DayRow) => {
 
   return (
    
-    <tr className={currentDay} key={key}>
+    <tr className={currentDay} key={key} style={{borderBottomWidth:"2px"}}>
       
       {Status ? (
-        <td className="dayName" key={key}>
+        <td className="dayName" key={key} >
           <span className="checked"></span> {dayName}*
           {/* {c_specific_day &&
             c_specific_day.map((res: any) => {
@@ -314,7 +314,7 @@ const DayRow = (props: DayRow) => {
             })} */}
         </td>
       ) : (
-        <td className="dayName" key={key}>
+        <td className="dayName " key={key}>
          
           <span className="checked"></span> {dayName}
         </td>
