@@ -905,3 +905,8 @@ overflow: overlay !important;
   border-top-width: 3px;
   border-top-color: #d21242;
 }
+
+/* this is buuton open show and hide in house location card listing */
+.active.daylist{ @apply  !block pl-[50px]}
+.OpenCloseStatus .daylist{@apply hidden}
+/* this is buuton open show and hide in house location card listing */

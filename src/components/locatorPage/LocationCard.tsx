@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useRef, useState } from 'react';
 import { CardComponent } from "@yext/search-ui-react";
 import { Location } from "../../types/search/locations";
 import GetDirection from "../commons/GetDirection";
@@ -8,6 +9,12 @@ import Address from "../commons/Address";
 import OpenClose from "../commons/openClose";
 import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
+import Hours from "../commons/hours";
+import { Openclose, mobilesvg, View_Store } from "../../../sites-global/global";
+import Phonesvg from "../../images/phone.svg";
+import email from "../../images/email.png";
+import Model from "../locationDetail/Model";
+import holiday from "../../images/holiday.jpg";
 import locationmiles from "../../images/location-miles.svg";
 
 
@@ -20,6 +27,14 @@ let array = [];
 
 
 const LocationCard: CardComponent<Location> = ({result}) => {
+  const [timeStatus, setTimeStatus] = useState("");
+  const onOpenHide = () => {
+    if (timeStatus == "") {
+      setTimeStatus("active");
+    } else {
+      setTimeStatus("");
+    }
+  }
 
   let url = "";
   const[hoursopen,setHoursopen]=React.useState(false);
@@ -37,7 +52,7 @@ function opentime(e: any) {
   }
 }
 
-    const { address } = result.rawData;
+const { address, hours, additionalHoursText, timezone } = result.rawData;
     var name: any = result.rawData.name?.toLowerCase();
     // let name1:any=country+"/"+finalregion+"/"+finalcity+"/"+result.rawData.slug+".html";
     var country: any = result.rawData.address.countryCode?.toLowerCase();
@@ -103,7 +118,7 @@ function opentime(e: any) {
 
                   {result.rawData.mainPhone}
                 {/* </Link> */}
-              {result.rawData.hours ? <>
+              {/* {result.rawData.hours ? <>
               <div className="mt-2">
            
                 {result.rawData.hours?.reopenDate ? <>
@@ -131,9 +146,40 @@ function opentime(e: any) {
                    <div className="hours-info text-lg font-second-main-font closeddot"> 
                    Closed
                    </div>
-                   </div>}
+                   </div>} */}
+                   <div>
+                    {/* this section is open cloase house in loaction card */}
+                      <div className="open-close ">
+                
+                <div className="hours-sec onhighLight">
+                  <div className="OpenCloseStatus ">
+                    <div className="hours-labels">
+                      <span className="icon"></span>
+                      <div className="flex" >
+                        
+                        <OpenClose
+                          timezone={timezone}
+                          hours={hours}
+                          deliveryHours={hours}
+                        ></OpenClose>
+                        <button> <svg onClick={onOpenHide} className="openclose" xmlns="http://www.w3.org/2000/svg" width="19.585" height="7.793" viewBox="0 0 9.585 4.793">
+                          <path id="hrd-drop" d="M9,13.5l4.793,4.793L18.585,13.5Z" transform="translate(-9 -13.5)" fill="#02a6db"></path>
+                        </svg></button>
+                      </div>
+
+                    </div>
+                    <div className={timeStatus + " daylist"} >
+                    
+                      <Hours key={result.rawData.id} hours={hours} additionalHoursText={additionalHoursText} /></div>
+                  </div>
+
+                </div>
+              </div>
+
+                   </div>
 
             </div>
+            {/* close the open hourse? */}
          
              <div className="button-bx">
               {/* <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
