@@ -67,9 +67,7 @@ return a.map(format).join(s);
   return (
     <>
      
-      <a onClick={openModal} className="text-link" id="holidaybtn" href="javascript:void(0);">
-        {props.name}
-      </a>
+     
 
       <Modal
         isOpen={modalIsOpen}
@@ -109,6 +107,9 @@ return a.map(format).join(s);
 })
 
 }
+<a onClick={openModal} className="text-link" id="holidaybtn" href="javascript:void(0);">
+        {props.name}
+      </a>
 </>
   )
 }

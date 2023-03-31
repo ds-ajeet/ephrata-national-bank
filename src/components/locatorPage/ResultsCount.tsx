@@ -10,7 +10,7 @@ interface ResultsCountCssClasses {
 }
 
 const builtInCssClasses: ResultsCountCssClasses = {
-  container: 'bg-white border-l-2 border-[#d8d8d8]',
+  container: 'ml-[2rem]',
   text: 'text-2xl text-[#004990] font-bold',
   number: 'text-large font-bold'
   

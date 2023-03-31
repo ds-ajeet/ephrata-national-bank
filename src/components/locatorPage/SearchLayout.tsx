@@ -338,7 +338,8 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           />
         </div>
         
-        <div className=""><ResultsCount
+        <div className="bg-white border-l-2 border-[#d8d8d8]">
+          <ResultsCount
             customCssClasses={{ container: "text-[#004990] text-lg " }}
           />
           </div>

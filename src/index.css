@@ -247,7 +247,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
   @apply relative pr-0 /*md:pr-[6.25rem]*/ leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
 }
 .location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
-.location-name-miles h2 a{ @apply text-[1.375rem] text-[#d21242] font-second-main-font}
+.location-name-miles h2 a{ @apply text-[1.4rem] text-[#d21242] font-bold}
 
 .location-name-miles .distance{
   @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0

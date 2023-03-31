@@ -25,6 +25,7 @@ export interface Hours {
 	sunday?: DayHour,
 	holidayHours?: HolidayHours[],
 	reopenDate?: string,
+	
 }
 
 export enum PickupAndDeliveryServices {
@@ -343,4 +344,5 @@ export interface Location {
 	yextRoutableCoordinate?: Coordinate,
 	yextWalkableCoordinate?: Coordinate,
 	videos?: ComplexVideo[],
+	
 }

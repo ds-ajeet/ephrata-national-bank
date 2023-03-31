@@ -56,6 +56,8 @@ import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Email from "../components/locationDetail/coutactemail";
 import Hours from "../components/commons/hours";
+import Model from "../components/locationDetail/Model";
+import Holidayhours from "../components/locationDetail/Holdayhours";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -306,6 +308,7 @@ const Location: Template<ExternalApiRenderData> = ({
     name,
     c_about,
     c_countact,
+    c_specific_day,
     dm_directoryParents,
   } = document;
 
@@ -505,7 +508,7 @@ const Location: Template<ExternalApiRenderData> = ({
                   title={"Store Opening Hours"}
                   additionalHoursText={additionalHoursText}
                   hours={hours}
-                  // c_specific_day={c_specific_day}
+                  c_specific_day={c_specific_day}
                 />
                 </div>
              
@@ -579,7 +582,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
             <div className="nearby-sec ">
               <div className="container bg-white">
-                 {/* <div className="sec-title">
+                 {/* <div className="sec-title pt-4">
                   <h2 className="">{StaticData.NearStoretext}</h2>
                 </div>  */}
                 <div className="nearby-sec-inner">
@@ -592,8 +595,11 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
+             
             </div>
+           
             <Email c_countact={c_countact} />
+            
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
