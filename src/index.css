@@ -468,7 +468,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .nearby-card .icon-row{ @apply pl-0}
 .nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
 .nearby-card h2 a{ @apply font-bold  text-[1.2rem] text-[#d21242] }
-.nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
+.nearby-card .distance{ @apply absolute right-0  top-0 text-[#004990]}
 .near-address{ @apply flex mt-2 items-start min-h-[90px]}
 .nearby-card .address { @apply text-lg }
 .nearby-card .availability-col{@apply my-4 hidden md:flex md:max-w-[100%] lg:max-w-none }
@@ -910,3 +910,11 @@ overflow: overlay !important;
 .active.daylist{ @apply  !block pl-[50px]}
 .OpenCloseStatus .daylist{@apply hidden}
 /* this is buuton open show and hide in house location card listing */
+
+/* this is answer to question section */
+#call-to-action ul li a:hover{
+  background-color: #fff;
+  color: #004990;
+}
+/* end of the code to hover section  */
+
