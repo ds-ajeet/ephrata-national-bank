@@ -289,7 +289,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .open-now-string svg{  @apply fill-gray-dark}
 
 
-.closeing-div .opendot{ @apply  text-lg font-second-main-font text-gray relative before:hidden after:hidden  after:bg-[#338833] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
+.closeing-div .opendot{ @apply  text-lg font-second-main-font text-[green] relative before:hidden after:hidden  after:bg-[#338833] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
 .closeing-div .closeddot{ @apply  text-lg font-second-main-font text-gray relative  before:hidden after:hidden after:bg-[#EB001B] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
 
 .banner-dark-bg .closeing-div .opendot{ @apply  font-main-font text-xl text-gray relative before:hidden after:hidden }

@@ -174,7 +174,9 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   <div className="hours-sec onhighLight">
                     <div className="OpenCloseStatus ">
                       <div className="hours-labels">
-                        <span className="icon"></span>
+                        <span className="icon">
+                          {/* <img src={timesvg} alt="time"/> */}
+                        </span>
                         <div className="flex">
                           <OpenClose
                             timezone={timezone}

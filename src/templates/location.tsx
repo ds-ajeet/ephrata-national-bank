@@ -124,7 +124,6 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     url += `${document.slug.toString()}.html`;
   }
   return url;
-
 };
 
 /**
@@ -483,60 +482,57 @@ const Location: Template<ExternalApiRenderData> = ({
             ></BreadCrumbs>
 
             <PhotoGallery photoGallery={photoGallery} />
-           <div>
-           <div className="about-sec ">
-        <div className="container-custom">
-          <div className="about-inner-sec flex bg-white">
-            <div className="about-content w-1/2" >
-              <strong className="location-established">
-                {document.c_about.labelYear}
-              </strong>
-              <div className="pt-2">
-                <h2 className="location-established">
-                  {document.c_about.heading}
-                </h2>
-              </div>
-              <div className="mt-8 ml-8 about-discription">
-              <p>{document.c_about.description}</p>
-              <p>{document.c_about.descriptionTwo}</p>
-              <p>{document.c_about.descriptionthree}</p>
-              <p>{document.c_about.descriptionFour}</p>
-            </div>
-            <div className="store-open-hours">
-              <h4 className="box-title">{"Branch Opning Details"}</h4>
-                <Hours
-                  title={"Store Opening Hours"}
-                  additionalHoursText={additionalHoursText}
-                  hours={hours}
-                  c_specific_day={c_specific_day}
-                />
-                </div>
-             
-            </div>
-            
-            
-            
-            <>
-            <div className="location-information w-1/2">
-              <Contact
-                address={address}
-                phone={mainPhone}
-                latitude={
-                  yextDisplayCoordinate
-                    ? yextDisplayCoordinate.latitude
-                    : displayCoordinate?.latitude
-                }
-                yextDisplayCoordinate={yextDisplayCoordinate}
-                longitude={
-                  yextDisplayCoordinate
-                    ? yextDisplayCoordinate.longitude
-                    : displayCoordinate?.longitude
-                }
-                hours={hours}
-                additionalHoursText={additionalHoursText}
-              ></Contact>
-              
-              {/* {hours ? ( 
+            <div>
+              <div className="about-sec ">
+                <div className="container-custom">
+                  <div className="about-inner-sec flex bg-white">
+                    <div className="about-content w-1/2">
+                      <strong className="location-established">
+                        {document.c_about.labelYear}
+                      </strong>
+                      <div className="pt-2">
+                        <h2 className="location-established">
+                          {document.c_about.heading}
+                        </h2>
+                      </div>
+                      <div className="mt-8 ml-8 about-discription">
+                        <p>{document.c_about.description}</p>
+                        <p>{document.c_about.descriptionTwo}</p>
+                        <p>{document.c_about.descriptionthree}</p>
+                        <p>{document.c_about.descriptionFour}</p>
+                      </div>
+                      <div className="store-open-hours">
+                        <h4 className="box-title">{"Branch Opning Details"}</h4>
+                        <Hours
+                          title={"Store Opening Hours"}
+                          additionalHoursText={additionalHoursText}
+                          hours={hours}
+                          c_specific_day={c_specific_day}
+                        />
+                      </div>
+                    </div>
+
+                    <>
+                      <div className="location-information w-1/2">
+                        <Contact
+                          address={address}
+                          phone={mainPhone}
+                          latitude={
+                            yextDisplayCoordinate
+                              ? yextDisplayCoordinate.latitude
+                              : displayCoordinate?.latitude
+                          }
+                          yextDisplayCoordinate={yextDisplayCoordinate}
+                          longitude={
+                            yextDisplayCoordinate
+                              ? yextDisplayCoordinate.longitude
+                              : displayCoordinate?.longitude
+                          }
+                          hours={hours}
+                          additionalHoursText={additionalHoursText}
+                        ></Contact>
+
+                        {/* {hours ? ( 
                 <div className="map-sec" id="map_canvas">
                   <CustomMap
                     prop={
@@ -557,19 +553,23 @@ const Location: Template<ExternalApiRenderData> = ({
                   />
                 </div>
               )} */}
-            </div>
-            </>
-          </div>
-        </div>
-      </div>
+                      </div>
+                    </>
+                  </div>
                 </div>
-                {c_faq ? <div className="w-full  pt-8">
-           <h4 className="sec_heading  text-[30px] text-center pt-4">How can we help ?</h4>
-           { <Faq prop={c_faq} c_fAQsCta={document.c_fAQsCta}/> }
-         </div> : <></>}
-                
-               
-            
+              </div>
+            </div>
+            {c_faq ? (
+              <div className="w-full  pt-8">
+                <h4 className="sec_heading  text-[30px] text-center pt-4">
+                  How can we help ?
+                </h4>
+                {<Faq prop={c_faq} c_fAQsCta={document.c_fAQsCta} />}
+              </div>
+            ) : (
+              <></>
+            )}
+
             {/* <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">
                 <h1 className="">{name}</h1>
@@ -578,11 +578,10 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               </div>
             </div> */}
-           
 
             <div className="nearby-sec ">
               <div className="container bg-white">
-                 {/* <div className="sec-title pt-4">
+                {/* <div className="sec-title pt-4">
                   <h2 className="">{StaticData.NearStoretext}</h2>
                 </div>  */}
                 <div className="nearby-sec-inner">
@@ -595,11 +594,9 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
-             
             </div>
-           
+
             <Email c_countact={c_countact} />
-            
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>

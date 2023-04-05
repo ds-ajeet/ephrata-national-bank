@@ -1,12 +1,11 @@
 import * as React from "react";
-// import Banner from "../components/banner";
 import GetDirection from "../components/commons/GetDirection";
 import constant from "../constant";
 import Header from "../components/layouts/header";
 import Footer from "../components/layouts/footer";
 import PhotoSlider from "../components/locationDetail/PhotoSlider";
-// import { stagingBaseUrl } from "../constants";
-// import bannerImage from "../images/banner.png"
+import mapimage from "../images/map.svg";
+import Phonesvg from "../images/phone.svg";
 import "../index.css";
 var currentUrl = "";
 import {
@@ -22,12 +21,18 @@ import {
 import BreadCrumbs from "../components/layouts/Breadcrumb";
 import Banner from "../components/locationDetail/banner";
 import { StaticData } from "../../sites-global/staticData";
-import { Addresssvg, favicon, mobilesvg, regionNames, stagingBaseurl } from "../../sites-global/global";
+import {
+  Addresssvg,
+  favicon,
+  mobilesvg,
+  regionNames,
+  stagingBaseurl,
+} from "../../sites-global/global";
 import { JsonLd } from "react-schemaorg";
 import Address from "../components/commons/Address";
 import PageLayout from "../components/layouts/PageLayout";
 import OpenClose from "../components/commons/openClose";
-import timesvg from "../images/watch-icn.svg";
+// import timesvg from "../images/watch-icn.svg";
 import { Link } from "@yext/pages/components";
 var currentUrl = "";
 export const config: TemplateConfig = {
@@ -52,7 +57,8 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.address",
       "dm_directoryChildren.hours",
-      "dm_directoryChildren.yextDisplayCoordinate"
+      "dm_directoryChildren.yextDisplayCoordinate",
+      "dm_directoryChildren.timezone",
     ],
     localization: {
       locales: ["en"],
@@ -62,16 +68,15 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url: any = ""
+  var url: any = "";
   document.dm_directoryParents.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
-    }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}/${document.slug.toString()}.html`
+    if (i.meta.entityType.id == "ce_country") {
+      url = `${i.slug}`;
+    } else if (i.meta.entityType.id == "ce_region") {
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`;
       // url = `${url}/${document.slug.toString()}.html`
     }
-  })
+  });
   return url;
 };
 
@@ -80,13 +85,20 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   path,
   document,
 }): HeadConfig => {
-  var canonical="";
-   document.dm_directoryChildren.map((entity: any) => {
-      canonical=  entity.address.countryCode.toLowerCase().replaceAll(" ", "-") + '/' +  entity.address.region.toLowerCase().replaceAll(" ", "-");
-          })
+  var canonical = "";
+  document.dm_directoryChildren.map((entity: any) => {
+    canonical =
+      entity.address.countryCode.toLowerCase().replaceAll(" ", "-") +
+      "/" +
+      entity.address.region.toLowerCase().replaceAll(" ", "-");
+  });
 
   return {
-    title: `${document.c_meta_title?document.c_meta_title:`MGM Stores in ${document.name} | Find a Local Store`}`,
+    title: `${
+      document.c_meta_title
+        ? document.c_meta_title
+        : `MGM Stores in ${document.name} | Find a Local Store`
+    }`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -97,88 +109,96 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           href: favicon,
         },
       },
-        {
-          type: "meta",
-          attributes: {
-            name: "description",
-            content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: `${
+            document.c_meta_description
+              ? document.c_meta_description
+              : `Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`
+          }`,
         },
+      },
 
-      //   {
-      //     type: "meta",
-      //     attributes: {
-      //       name: "title",
-      //       content: `${document.c_metaTitle}`,
-      //     },
-      //   },
-        {
-          type: "meta",
-          attributes: {
-            name: "author",
-            content: StaticData.Brandname,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "title",
+          content: `${document.c_metaTitle}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "keywords",
-            content: document.name,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "author",
+          content: StaticData.Brandname,
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "robots",
-            content: "noindex, nofollow",
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "keywords",
+          content: document.name,
         },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "robots",
+          content: "noindex, nofollow",
+        },
+      },
 
-        {
-          type: "link",
-          attributes: {
-            rel: "canonical",
-            href: `${
-              stagingBaseurl 
-                 ? stagingBaseurl + canonical + "/"+ document.slug + ".html"
-                 : "/" + document.slug + ".html"
-            }`,
-          },
+      {
+        type: "link",
+        attributes: {
+          rel: "canonical",
+          href: `${
+            stagingBaseurl
+              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+              : "/" + document.slug + ".html"
+          }`,
         },
+      },
       //   // /og tags
 
-        {
-          type: "meta",
-          attributes: {
-            property: "og:url",
-            content: `${
-              stagingBaseurl 
-                 ? stagingBaseurl + canonical + "/"+ document.slug + ".html"
-                 : "/" + document.slug + ".html"
-            }`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:url",
+          content: `${
+            stagingBaseurl
+              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+              : "/" + document.slug + ".html"
+          }`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:description",
-            content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:description",
+          content: `${
+            document.c_meta_description
+              ? document.c_meta_description
+              : `Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`
+          }`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:title",
-            content: `${document.name}`,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:title",
+          content: `${document.name}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:image",
-            content: favicon,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:image",
+          content: favicon,
         },
+      },
 
       {
         type: "meta",
@@ -191,7 +211,9 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:url",
-          content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+          content: `/${
+            document.slug ? document.slug : `${document.name.toLowerCase()}`
+          }.html`,
         },
       },
 
@@ -199,7 +221,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+          content: `${
+            document.c_meta_description
+              ? document.c_meta_description
+              : `Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`
+          }`,
         },
       },
     ],
@@ -253,7 +279,15 @@ const City: Template<TemplateRenderProps> = ({
     // let key: any = Object.keys(entity.hours)[0];
     var url = "";
     // var name: any = entity.name.toLowerCase();
-    var name: any = "/"+document.dm_directoryParents[1].slug+"/"+dm_directoryParents[2].slug+"/"+document.slug + "/"+ entity.id.toLowerCase();
+    var name: any =
+      "/" +
+      document.dm_directoryParents[1].slug +
+      "/" +
+      dm_directoryParents[2].slug +
+      "/" +
+      document.slug +
+      "/" +
+      entity.id.toLowerCase();
 
     var region: any = entity.address.region.toLowerCase();
     var initialregion: any = region.toString();
@@ -261,51 +295,59 @@ const City: Template<TemplateRenderProps> = ({
     var city: any = entity.address.city.toLowerCase();
     var initialrcity: any = city.toString();
     var finalcity: any = initialrcity.replaceAll(" ", "-");
-    var string: any = name.toString();;
+    var string: any = name.toString();
     let result: any = string.replaceAll(" ", "-");
-     
+
     if (entity.slug) {
       url = `${result}.html`;
     } else {
       url = `/${entity.slug.toString()}.html`;
     }
-    console.log(url,"url city page")
-
-
 
     return (
-
       <div className="nearby-card">
         <div className="location-name-miles icon-row">
-        {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
-                      alt="" /></div> */}
-          <h2><Link className="inline-block notHighlight" href={url}
-           data-ya-track={`viewstore-${entity.name}`}
-           eventName={`viewstore-${entity.name}`}
-           rel="noopener noreferrer"
-          >{entity.name}</Link></h2>
+          <h2>
+            <Link
+              className="inline-block notHighlight"
+              href={url}
+              data-ya-track={`viewstore-${entity.name}`}
+              eventName={`viewstore-${entity.name}`}
+              rel="noopener noreferrer"
+            >
+              {entity.name}
+            </Link>
+          </h2>
         </div>
         <div className="icon-row">
-          <Address address={entity.address} />
-        </div>
-        {entity.mainPhone?
-        <div className="icon-row">
-           {/* <div className="icon">
-           <img className=" " src={Phonesvg} width="20" height="20"
-                        alt="" />
-                        </div> */}
-          <div className="content-col">
-            <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
+          <div className="icon mt-4">
+            <img className=" " src={mapimage} width="20" height="20" alt="" />
           </div>
-        </div>:''}
-       
+
+          <div className="content-col ml-8">
+            <Address address={entity.address} />
+          </div>
+        </div>
+        {entity.mainPhone ? (
+          <div className="icon-row">
+            <div className="icon">
+              <img className=" " src={Phonesvg} width="20" height="20" alt="" />
+            </div>
+            <div className="content-col ml-10">
+              <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+
         <div className="icon-row">
           <div className="content-col open-now-string">
-           
-            {typeof entity.hours?.reopenDate!="undefined"?
-            <h6>{StaticData.tempClosed}</h6>
-          :<OpenClose timezone={entity.timezone} hours={entity.hours}/>}
-           
+            {typeof entity.hours?.reopenDate != "undefined" ? (
+              <h6>{StaticData.tempClosed}</h6>
+            ) : (
+              <OpenClose timezone={entity.timezone} hours={entity.hours} />
+            )}
           </div>
         </div>
         {/* <div className="icon-row content-col availability-col">
@@ -316,20 +358,25 @@ const City: Template<TemplateRenderProps> = ({
             hours={entity.hours} />
         </div> */}
 
-
-
         <div className="button-bx">
-          <Link className="btn" href={url}
-           data-ya-track={`viewstore-${entity.name}`}
-           eventName={`viewstore-${entity.name}`}
-           rel="noopener noreferrer"
+          <Link
+            className="btn"
+            href={url}
+            data-ya-track={`viewstore-${entity.name}`}
+            eventName={`viewstore-${entity.name}`}
+            rel="noopener noreferrer"
           >
-
-            {StaticData.StoreDetailbtn}</Link>
-          <GetDirection buttonText={StaticData.getDirection} address={entity.address} latitude={entity.yextDisplayCoordinate.latitude} longitude={entity.yextDisplayCoordinate.longitude} />
+            {StaticData.StoreDetailbtn}
+          </Link>
+          <GetDirection
+            buttonText={StaticData.getDirection}
+            address={entity.address}
+            latitude={entity.yextDisplayCoordinate.latitude}
+            longitude={entity.yextDisplayCoordinate.longitude}
+          />
         </div>
       </div>
-  );
+    );
   });
   function getDirectionUrl(entitiy: any) {
     var origin: any = null;
@@ -402,17 +449,15 @@ const City: Template<TemplateRenderProps> = ({
   //     c_tikTok = i.c_tikTok ? i.c_tikTok : "";
   //   });
 
-  var url: any = ""
+  var url: any = "";
 
   document.dm_directoryParents.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
+    if (i.meta.entityType.id == "ce_country") {
+      url = `${i.slug}`;
+    } else if (i.meta.entityType.id == "ce_region") {
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`;
     }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}/${document.slug.toString()}.html`
-      
-    }
-  })
+  });
   let breadcrumbScheme: any = [];
   let currentIndex: any = 0;
   dm_directoryParents &&
@@ -457,7 +502,7 @@ const City: Template<TemplateRenderProps> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-     
+
       <PageLayout _site={_site}>
         <BreadCrumbs
           name={name}
@@ -469,17 +514,14 @@ const City: Template<TemplateRenderProps> = ({
         <div className="content-list city-page">
           <div className="container mx-auto">
             <div className="sec-title">
-              <h2>
-              MGM stores in {name}
-              </h2>
+              <h2>Ephrata Bank Branch in {name}</h2>
             </div>
-            <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem]">
+            <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem] gap-x-6">
               {childrenDivs}
             </div>
           </div>
         </div>
       </PageLayout>
-     
     </>
   );
 };
