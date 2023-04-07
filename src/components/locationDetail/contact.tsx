@@ -31,7 +31,7 @@ const Contact = (props: any) => {
         </div>
 
       <div className="address-main-sec pt-8">
-      <div className="text-[#004990] ml-8 pt-4 font-bold text-xl">
+      <div className="text-[#004990] pt-4 font-bold text-xl">
                         <Model
                   name={StaticData.Holdiay}
                   holidayHours={hours?.holidayHours}
@@ -39,7 +39,7 @@ const Contact = (props: any) => {
                 </div>
         {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
 
-        <div className="icon-rows content-col flex">
+        <div className="icon-rows content-col flex pt-4">
           <div className="icon">
             {" "}
             <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />

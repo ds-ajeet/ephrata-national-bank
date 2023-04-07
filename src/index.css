@@ -200,7 +200,7 @@ table.day-hrs td{ @apply   text-right  }
 table.day-hrs tr:last-child td{  @apply border-b-0}
 table.day-hrs .dayName{ @apply text-lg md:text-lg capitalize pl-0 py-0 text-left}
 table.day-hrs .currentDay .dayName{  @apply relative  py-1}
-table.day-hrs .currentDay{  @apply font-bold}
+table.day-hrs .currentDay{  @apply font-bold text-[#004990] border-b-black}
 
 /* table.day-hrs .currentDay .dayName .checked{  @apply absolute top-1/2 -mt-2 left-0 bg-red rounded-sm w-4 h-4 z-0}
 table.day-hrs .currentDay .dayName .checked:after{  @apply content-[''] border-b-2 border-l-2 border-white transform -rotate-45 z-0 w-2.5 h-1.5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -mt-1} */
