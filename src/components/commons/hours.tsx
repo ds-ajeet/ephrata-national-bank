@@ -429,8 +429,10 @@ const Hours = (props: Hours) => {
 
   return (
     <>
+
       <table className="day-hrs">
         <thead className="sr-only">
+         
           <tr>
             <th>{StaticData.DayofWeek}</th>
             <th>{StaticData.Hours}</th>

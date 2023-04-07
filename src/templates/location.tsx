@@ -503,12 +503,15 @@ const Location: Template<ExternalApiRenderData> = ({
                       </div>
                       <div className="store-open-hours">
                         <h4 className="box-title">{"Branch Opning Details"}</h4>
+
                         <Hours
                           title={"Store Opening Hours"}
                           additionalHoursText={additionalHoursText}
                           hours={hours}
                           c_specific_day={c_specific_day}
                         />
+                        
+
                       </div>
                     </div>
 

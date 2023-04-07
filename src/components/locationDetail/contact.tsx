@@ -29,7 +29,14 @@ const Contact = (props: any) => {
      <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
         </div>
+
       <div className="address-main-sec pt-8">
+      <div className="text-[#004990] ml-8 pt-4 font-bold text-xl">
+                        <Model
+                  name={StaticData.Holdiay}
+                  holidayHours={hours?.holidayHours}
+                />
+                </div>
         {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
 
         <div className="icon-rows content-col flex">

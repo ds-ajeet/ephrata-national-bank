@@ -10,7 +10,7 @@ import OpenClose from "../commons/openClose";
 import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
 import Hours from "../commons/hours";
-import { Openclose, mobilesvg, View_Store } from "../../../sites-global/global";
+import { Openclose, mobilesvg, View_Store,close } from "../../../sites-global/global";
 import Phonesvg from "../../images/phone.svg";
 import email from "../../images/email.png";
 import Model from "../locationDetail/Model";
@@ -161,12 +161,16 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
               {/* </Link> */}
 
-              <div>
+              {/*<div className="pt-2">
+           
+
+                
+              
                 <Model
                   name={StaticData.Holdiay}
                   holidayHours={hours?.holidayHours}
                 />
-              </div>
+              </div>*/}
 
               <div className="pt-2 pb-2">
                 {/* this section is open cloase house in loaction card */}

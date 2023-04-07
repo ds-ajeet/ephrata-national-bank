@@ -124,6 +124,16 @@ export const humburgerIcon =`<svg class="humburger-i" viewBox="0 0 24 24" versio
 			<path d="M-52.7,65L-79,38.7l5.7-5.7L-47,59.3L-20.7,33l5.7,5.7L-41.3,65L-15,91.3     l-5.7,5.7L-47,70.7L-73.3,97l-5.7-5.7L-52.7,65z"></path>
 		</g>
 	</g>
+</svg>`;
+
+export const close=`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
+  <path d="M0,0H48V48H0Z" fill="red"/>
+  <g>
+    <path d="M8,41.414l16-16,16,16L41.414,40l-16-16,16-16L40,6.586l-16,16-16-16L6.586,8l16,16-16,16Z" fill="#fff"/>
+  </g>
+
 </svg>`
+
+
 
 export const search_icn = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 30.938 30.579"><g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(-3 -3)"><path id="Path_39" data-name="Path 39" d="M24.691,14.6A10.1,10.1,0,1,1,14.6,4.5,10.1,10.1,0,0,1,24.691,14.6Z" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path id="Path_40" data-name="Path 40" d="M35.066,34.707,24.975,24.975" transform="translate(-3.249 -3.249)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></g></svg>`;

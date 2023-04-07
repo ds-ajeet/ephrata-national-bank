@@ -1,7 +1,7 @@
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from 'react';
 import * as React from "react";
-import {  LocationBias, Pagination } from "@yext/search-ui-react";
+import {  LocationBias, Pagination,StandardFacets } from "@yext/search-ui-react";
 
 import { Location } from "../../types/search/locations";
 import LocationCard from "./LocationCard";
@@ -18,6 +18,7 @@ import LoadingSpinner from "../commons/LoadingSpinner";
 import {breadcrumbhome, center_latitude, center_longitude, googleApikey, search_icn, UseMylocationsvg } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 
+
 import FilterSearch from "../locatorPage/FilterSearch";
 import ViewMore from "./ViewMore";
 import VerticalResults from "../VerticalResults";
@@ -25,6 +26,7 @@ import ResultsCount from "./ResultsCount";
 import useFetchResults from "../../hooks/useFetchResults";
 import { Link } from "@mui/material";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
+
 
 var params1: any = { latitude: center_latitude, longitude:center_longitude }
 var mapzoom = 8;
@@ -226,6 +228,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
 
       {/* {loader} */}
       <div className="breadcrumb">
+      
         <div className="container-custom">
           <ul>
             <li>
@@ -296,6 +299,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                 handleSetUserShareLocation={handleSetUserShareLocation}
             />
 
+
             <button
               className="search-btn"
               aria-label="Search bar icon"
@@ -304,18 +308,32 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                 </button>
           </div>
 
-<div className="fliter-sec">
-          
+<div className="fliter-sec flex">
+<div className="bg-[#D21242] left-0">
+          <StandardFacets
+  collapsible={true}
+  defaultExpanded={false}
+  // excludedFieldIds={["c_categories"]}
+/>
+
+        </div>
+
+
+         
 
           <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
               <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
 
              <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
             </button>
+           
 </div>
 
 
-        </div>
+        </div> 
+        
+        
+       
         
         <div className="mobile-btns">
           <div className="button-bx">
@@ -366,7 +384,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
       
               {locationinbuit && locationinbuit.length <= 0 ?
                <div className="browse-dir">
-               <a className="underline " href='/gb.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a> 
+               <a className="underline " href='/us.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a> 
                </div>:''}
                 <div className="button-bx">
                <ViewMore  className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />
