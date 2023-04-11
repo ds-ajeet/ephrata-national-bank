@@ -375,7 +375,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // console.log(j, "j");
             url = url + j.slug;
           }
         });
@@ -399,7 +399,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // console.log(j, "j");
             url = url + "/" + j.slug;
           }
         });
@@ -432,7 +432,7 @@ const Location: Template<ExternalApiRenderData> = ({
         return element.image.url;
       })
     : null;
-  console.log(document);
+  // console.log(document);
   let bannerimage = c_banner_image && c_banner_image.image.url;
 
   return (
@@ -502,7 +502,7 @@ const Location: Template<ExternalApiRenderData> = ({
                         <p>{document.c_about.descriptionFour}</p>
                       </div>
                       <div className="store-open-hours">
-                        <h4 className="box-title">{"Branch Opning Details"}</h4>
+                        <h4 className="box-title">{"Branch Opening Details"}</h4>
 
                         <Hours
                           title={"Store Opening Hours"}

@@ -121,16 +121,16 @@ function sortByDay(week: Week): Week {
   return orderedWeek;
 }
 
-const weekDays: any = {
-  // "sunday": 0, // << if sunday is first day of week
-  monday: 1,
-  tuesday: 2,
-  wednesday: 3,
-  thursday: 4,
-  friday: 5,
-  saturday: 6,
-  sunday: 7,
-};
+// const weekDays: any = {
+//   // "sunday": 0, // << if sunday is first day of week
+//   monday: 1,
+//   tuesday: 2,
+//   wednesday: 3,
+//   thursday: 4,
+//   friday: 5,
+//   saturday: 6,
+//   sunday: 7,
+// };
 
 const renderHours = (week: Week, c_specific_day: any) => {
   const dayDom: JSX.Element[] = [];
@@ -148,7 +148,9 @@ const renderHours = (week: Week, c_specific_day: any) => {
       }
       return a.map(format).join(s);
     }
-    function formatDate(date) {
+    // function chnage on 11-04-2023 parameter pass only date
+
+    function formatDate(date: string | number | Date) {
       let d = new Date(date),
         month = "" + (d.getMonth() + 1),
         day = "" + d.getDate(),
@@ -165,7 +167,7 @@ const renderHours = (week: Week, c_specific_day: any) => {
     a = [{ day: "numeric" }, { month: "long" }, { year: "numeric" }];
     s = join(dayDate, a, " ");
     dayDate = s;
-    // console.log('isToday',new Date(),new Date().getDay(),todayIndex, k, isDayToday(k));
+    // console.log('isToday',new Date());
 
     dayDom.push(
       <DayRow
@@ -181,11 +183,11 @@ const renderHours = (week: Week, c_specific_day: any) => {
     i++;
   }
 
-  dayDom.sort(function sortByDay(a: any, b: any) {
-    const day1 = a.key?.toLowerCase();
-    const day2 = b.key?.toLowerCase();
-    return weekDays[day1] - weekDays[day2];
-  });
+  // dayDom.sort(function sortByDay(a: any, b: any) {
+  //   const day1 = a.key?.toLowerCase();
+  //   const day2 = b.key?.toLowerCase();
+  //   return weekDays[day1] - weekDays[day2];
+  // });
   return <tbody key={i}>{dayDom}</tbody>;
 };
 

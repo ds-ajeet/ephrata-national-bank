@@ -1,6 +1,6 @@
 import * as React from "react";
 import OpenClose from "../commons/openClose";
-import Defaultimage from "../../images/luxurystore.jpg"
+// import Defaultimage from "../../images/luxurystore.jpg"
 
 export type Address = {
   line1: string;

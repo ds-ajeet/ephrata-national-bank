@@ -17,4 +17,5 @@ export const AnswerExperienceConfig = {
     filterSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
 
   }
+  // https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=usa&api_key=f557ca0fd6f1daae1e92882690f5d099&v=20181201&resolvePlaceholders=true&entityTypes=location
 }
