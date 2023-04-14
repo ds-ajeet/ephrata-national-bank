@@ -70,25 +70,21 @@ const Header = (props: any) => {
             </div>
 
             <div className="header-secound menu ">
-              <nav className="h-full pt-[2rem]">
-                <ul
-                  className="flex gap-x-7 h-full"
-                  style={{ fontSize: "initial" }}
-                >
+              <nav className="h-full headernav">
                   {props._site?.c_headermenus.cta.map(
                     (del: any, index: number) => {
                       return (
                         <>
-                          <li className="text-white">
+                          {/* <li className="text-white">
                             <a className="navbar-item" href={del?.link}>
                               <span>{del?.label}</span>
                             </a>
-                          </li>
+                          </li> */}
+                          <button type="button" className="p-[20px] text-white" style={{height:'inherit'}}>{del?.label}</button>
                         </>
                       );
                     }
                   )}
-                </ul>
               </nav>
             </div>
           </div>

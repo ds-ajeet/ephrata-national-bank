@@ -11,7 +11,6 @@ import { Link } from "@yext/pages/components";
 const Footer = (props: any) => {
   // const [isNavVisible, setNavVisibility] =  useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  console.log(props, "footer props");
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1024px)");
     mediaQuery.addListener(handleMediaQueryChange);
@@ -29,7 +28,6 @@ const Footer = (props: any) => {
       setIsSmallScreen(false);
     }
   };
-
   return (
     <>
       <footer className="inline-block w-full site-footer bg-[#004990] ">

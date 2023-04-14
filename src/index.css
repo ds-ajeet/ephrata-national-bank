@@ -918,3 +918,10 @@ overflow: overlay !important;
 }
 /* end of the code to hover section  */
 
+
+/* Header menu button section*/
+.header-secound .headernav button:hover{
+background-color: aliceblue;
+color:#004990;
+}
+
