@@ -309,14 +309,14 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           </div>
 
 <div className="fliter-sec flex">
-<div className="bg-[#D21242] left-0">
+{/* <div className="bg-[#D21242] left-0">
           <StandardFacets
   collapsible={true}
   defaultExpanded={false}
   // excludedFieldIds={["c_categories"]}
 />
 
-        </div>
+        </div> */}
 
 
          
