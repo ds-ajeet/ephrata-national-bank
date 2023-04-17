@@ -16,6 +16,7 @@ import email from "../../images/email.png";
 import Model from "../locationDetail/Model";
 import locationmiles from "../../images/location-miles.svg";
 import Holidayhours from "../locationDetail/Holdayhours";
+import { formatPhoneNumber } from "react-phone-number-input";
 
 const metersToMiles = (meters: number) => {
   const miles = meters * 0.000621371;
@@ -156,7 +157,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   alt="phonesvg"
                 />
 
-                <span className="ml-4">{result.rawData.mainPhone}</span>
+                <span className="ml-4">{formatPhoneNumber(result.rawData.mainPhone)}</span>
               </div>
 
               {/* </Link> */}
