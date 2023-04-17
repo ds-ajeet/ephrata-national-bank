@@ -80,21 +80,16 @@ const Footer = (props: any) => {
             <p className="text-white mt-4 font-bold pl-[4rem]">
               Toll Free:
               <Link
-                type="button"
                 href={`tel:+18777736605`}
                 className=" btn notHighlight "
                 data-ya-track={`viewStore `}
                 eventName={`viewStore`}
                 rel="noopener noreferrer"
               >
-                <a href={`tel:+18777736605`} className="teliphone-footer ml-2">
-                  (877) 773-6605
-                </a>
+                <span className="ml-2">(877) 773-6605</span>
               </Link>
             </p>
           </div>
-
-          {/* </div> */}
           <div className="copyright-bx">
             <div className="mt-[7rem] text-white text-3xl">
               <strong>{props._site?.c_footerCountact}</strong>

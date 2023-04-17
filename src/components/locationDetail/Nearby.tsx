@@ -99,13 +99,13 @@ export default function Nearby(props: any) {
                 <div className="icon-row content-col font-bold">
                   <Address address={location.data.address} />
                 </div>
-                {/* {typeof location.distance != "undefined" ? (
+                {typeof location.distance != "undefined" ? (
                   <div className="distance">
                     {metersToMiles(location.distance)} <span>{StaticData.miles}</span>
                   </div>
                 ) : (
                   ""
-                )} */}
+                )}
                 <div className="icon-row closeing-div">
                   {/* {location.data.hours?
                     <div className="flex open-now-string items-center " data-id={`main-shop-${location.data.id}`} >

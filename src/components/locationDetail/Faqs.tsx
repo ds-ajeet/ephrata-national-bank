@@ -78,7 +78,7 @@ import { useEffect, useState } from "react";
 
 type Faq = {
   prop: any;
-  c_fAQsCta:any;
+  c_fAQsCta: any;
 };
 
 const Faq = (faqData: Faq) => {
@@ -115,7 +115,7 @@ const Faq = (faqData: Faq) => {
     setLeftFaqLen(left);
     setRightFaqLen(right);
   });
-// console.log(faqData.c_fAQsCta,"hellollo")
+  // console.log(faqData.c_fAQsCta,"hellollo")
   return (
     <>
       <div className="faq-sec bg-light">
@@ -124,35 +124,35 @@ const Faq = (faqData: Faq) => {
           <div className="faq-blocks">
             <div className="left-faq">
               {faq_Data.map((i: any, index: any) => {
-                  return (
-                    <div
-                      id={index}
-                      className={
-                        selected == index
-                          ? `faq-block ${faqClass}`
-                          : "faq-block"
-                      }
-                      key={index}
+                return (
+                  <div
+                    id={index}
+                    className={
+                      selected == index
+                        ? `faq-block ${faqClass}`
+                        : "faq-block"
+                    }
+                    key={index}
+                  >
+                    <h4
+                      className="faq-title"
+                      onClick={(e) => isShowContent(e, index)}
                     >
-                      <h4
-                        className="faq-title"
-                        onClick={(e) => isShowContent(e, index)}
-                      >
-                        {i.question} <span className="faq-icon"></span>
-                      </h4>
+                      {i.question} <span className="faq-icon"></span>
+                    </h4>
 
-                      <>
-                        <div className="faq-content">
-                          <p>{i.answer}</p>
-                        </div>
-                      </>
-                    </div>
-                   );
-                  
-                   })}
-                 </div>
-                 {faqData.c_fAQsCta && faqData.c_fAQsCta &&<div className="mt-12 px-96 mx-16"><Link href={faqData.c_fAQsCta} eventName={faqData.c_fAQsCta} className="bg-[#FF0000] p-2 text-white">{faqData.c_fAQsCta}</Link></div>}
-                 
+                    <>
+                      <div className="faq-content">
+                        <p>{i.answer}</p>
+                      </div>
+                    </>
+                  </div>
+                );
+
+              })}
+            </div>
+            {faqData.c_fAQsCta && faqData.c_fAQsCta && <div className="mt-12 px-96 mx-16"><Link href={faqData.c_fAQsCta} eventName={faqData.c_fAQsCta} className="bg-[#FF0000] p-2 text-white">{faqData.c_fAQsCta}</Link></div>}
+
           </div>
         </div>
       </div>
