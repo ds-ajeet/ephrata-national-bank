@@ -111,7 +111,7 @@ const SearchLayout = (props: any): JSX.Element => {
     if (navigator.geolocation) {
       const error = (error: any) => {
         if (error.code == 1) {
-          setallowLocation("Please allow your Location");
+          setallowLocation("Please allow Your Location");
         }
       };
 
