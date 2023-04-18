@@ -17,12 +17,7 @@ const Header = (props: any) => {
 
   return (
     <>
-      <header
-        id="header"
-        className="fullwidth clear"
-        
-        aria-label="site header"
-      >
+      <header id="header" className="fullwidth clear" aria-label="site header">
         <div id="topbar" className="fullwidth">
           <div className="container clear">
             <nav id="secondary-navigation" aria-label="site contact links">
@@ -30,10 +25,7 @@ const Header = (props: any) => {
                 {props._site?.c_headerCta.map((res: any) => {
                   return (
                     <>
-                      <li
-                        id="menu-item-9688"
-                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-968"
-                      >
+                      <li>
                         <a
                           title="Customer Support"
                           aria-label="Customer Support"
@@ -71,20 +63,21 @@ const Header = (props: any) => {
 
             <div className="header-secound menu ">
               <nav className="h-full headernav">
-                  {props._site?.c_headermenus.cta.map(
-                    (del: any, index: number) => {
-                      return (
-                        <>
-                          {/* <li className="text-white">
-                            <a className="navbar-item" href={del?.link}>
-                              <span>{del?.label}</span>
-                            </a>
-                          </li> */}
-                          <button type="button" className="p-[20px] text-white" style={{height:'inherit'}}>{del?.label}</button>
-                        </>
-                      );
-                    }
-                  )}
+                {props._site?.c_headermenus.cta.map(
+                  (del: any, index: number) => {
+                    return (
+                      <>
+                        <button
+                          type="button"
+                          className="p-[20px] text-white"
+                          style={{ height: "inherit" }}
+                        >
+                          {del?.label}
+                        </button>
+                      </>
+                    );
+                  }
+                )}
               </nav>
             </div>
           </div>

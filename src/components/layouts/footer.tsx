@@ -39,7 +39,7 @@ const Footer = (props: any) => {
 
             <div className="store-inner flex flex-raw mt-8 text-white">
               <span>
-                <h3>{props._site?.c_footerMember}</h3>
+               {props._site?.c_footerMember}
               </span>
               <div>
                 <div className=" mt-2">

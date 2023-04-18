@@ -34,6 +34,7 @@ import PageLayout from "../components/layouts/PageLayout";
 import OpenClose from "../components/commons/openClose";
 // import timesvg from "../images/watch-icn.svg";
 import { Link } from "@yext/pages/components";
+import { formatPhoneNumber } from "react-phone-number-input";
 var currentUrl = "";
 export const config: TemplateConfig = {
   stream: {
@@ -97,7 +98,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: `${
       document.c_meta_title
         ? document.c_meta_title
-        : `MGM Stores in ${document.name} | Find a Local Store`
+        : `Ephrata Branch in ${document.name} | Find a Local Store`
     }`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
@@ -116,7 +117,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`
+              : `Use this page to find your nearest Ephrata Branch in ${document.name} and discover the location details you need to visit us today.`
           }`,
         },
       },
@@ -161,6 +162,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           }`,
         },
       },
+      
       //   // /og tags
 
       {
@@ -267,6 +269,7 @@ const City: Template<TemplateRenderProps> = ({
     slugString += e.slug + "/";
   });
 
+
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
     var origin: any = null;
     if (entity.address.city) {
@@ -334,7 +337,7 @@ const City: Template<TemplateRenderProps> = ({
               <img className=" " src={Phonesvg} width="20" height="20" alt="" />
             </div>
             <div className="content-col ml-10">
-              <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
+              <a href={`tel:${entity.mainPhone}`}>{formatPhoneNumber(entity.mainPhone)}</a>
             </div>
           </div>
         ) : (
