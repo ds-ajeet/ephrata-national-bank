@@ -50,6 +50,8 @@ export function flattenFilters(filter: Filter | CombinedFilter | null | undefine
  * Returns true if the two given filters are the same
  */
 export function isDuplicateFilter(thisFilter: Filter, otherFilter: Filter): boolean {
+  
+
   if (thisFilter.fieldId !== otherFilter.fieldId) {
     return false;
   }

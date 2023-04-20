@@ -62,18 +62,116 @@ const Header = (props: any) => {
             </div>
 
             <div className="header-secound menu ">
-              <nav className="h-full headernav">
+              <nav className="h-full headernav flex">
                 {props._site?.c_headermenus.cta.map(
                   (del: any, index: number) => {
                     return (
                       <>
-                        <button
-                          type="button"
-                          className="p-[20px] text-white"
-                          style={{ height: "inherit" }}
-                        >
-                          {del?.label}
-                        </button>
+                        <div className="navbar">
+                          <div className="dropdown">
+                            <button
+                              type="button"
+                              className="p-[20px] text-white"
+                              style={{ height: "inherit" }}
+                            >
+                              {del?.label}
+                            </button>
+                            <div className="dropdown-content">
+                              <div className="rows">
+                                <div className="columns">
+                                  <div className="text-black pt-8">
+                                    {props?._site?.c_headersubMenuOne?.map(
+                                      (item: any, indexes: number) => (
+                                        <>
+                                          {index == indexes ? (
+                                            <>
+                                              <div className="text-[#004990]  ml-[0.8rem]">
+                                                {item.heading}
+                                              </div>
+                                              {item?.cta?.map((data: any) => (
+                                                <>
+                                                  <a href="#">{data.label}</a>
+                                                </>
+                                              ))}
+                                            </>
+                                          ) : (
+                                            ""
+                                          )}
+                                        </>
+                                      )
+                                    )}
+                                  </div>
+                                  <div className="text-black pt-8">
+                                    {props?._site?.c_headerSubMenuTwo?.map(
+                                      (item: any, indexes: number) => (
+                                        <>
+                                          {index == indexes ? (
+                                            <>
+                                              <div className="text-[#004990]  ml-[0.8rem]">
+                                                {item.heading}
+                                              </div>
+                                              {item?.cta?.map((data: any) => (
+                                                <>
+                                                  <a href="#">{data.label}</a>
+                                                </>
+                                              ))}
+                                            </>
+                                          ) : (
+                                            ""
+                                          )}
+                                        </>
+                                      )
+                                    )}
+                                  </div>
+                                  <div className="text-black pt-8">
+                                    {props?._site?.c_headerSubMenuThree?.map(
+                                      (item: any, indexes: number) => (
+                                        <>
+                                          {index == indexes ? (
+                                            <>
+                                              <div className="text-[#004990]  ml-[0.8rem]">
+                                                {item.heading}
+                                              </div>
+                                              {item?.cta?.map((data: any) => (
+                                                <>
+                                                  <a href="#">{data.label}</a>
+                                                </>
+                                              ))}
+                                            </>
+                                          ) : (
+                                            ""
+                                          )}
+                                        </>
+                                      )
+                                    )}
+                                  </div>
+                                  <div className="text-black pt-8">
+                                    {props?._site?.c_headerSubMenuFour?.map(
+                                      (item: any, indexes: number) => (
+                                        <>
+                                          {index == indexes ? (
+                                            <>
+                                              <div className="text-[#004990]  ml-[0.8rem]">
+                                                {item.heading}
+                                              </div>
+                                              {item?.cta?.map((data: any) => (
+                                                <>
+                                                  <a href="#">{data.label}</a>
+                                                </>
+                                              ))}
+                                            </>
+                                          ) : (
+                                            ""
+                                          )}
+                                        </>
+                                      )
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </>
                     );
                   }

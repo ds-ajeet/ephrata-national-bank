@@ -100,7 +100,7 @@ const Footer = (props: any) => {
                   <ul>
                     <li>
                       <a href="#">
-                        <img src={del1.url} alt="sociallogo" width="55" ></img>
+                        <img src={del1.url} alt="sociallogo" width="55" />
                       </a>
                     </li>
                   </ul>

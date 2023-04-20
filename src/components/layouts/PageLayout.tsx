@@ -5,34 +5,26 @@ import Header from "./header";
 import BreadCrumbs from "./Breadcrumb";
 
 type Props = {
-    title?: string;
-    _site?: any;
-    
+  title?: string;
+  _site?: any;
 
-
-  
-    children?: React.ReactNode;
+  children?: React.ReactNode;
 };
-  
-  const PageLayout = ({
-    title,
-    _site,
-   
-   
-    children,
-  }: Props) => {
-    console.log()
-    return (
-        <>
-         <Header _site={_site}/>
-        
-        
-                {children}
-                <Footer _site={_site}/>
-      
-        </>
-    );
-  };
+
+const PageLayout = ({
+  title,
+  _site,
+
+  children,
+}: Props) => {
+  return (
+    <>
+      <Header _site={_site} />
+
+      {children}
+      <Footer _site={_site} />
+    </>
+  );
+};
 
 export default PageLayout;
-  

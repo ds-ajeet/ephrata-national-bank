@@ -62,7 +62,6 @@ export function ResultsCountDisplay({
 
   const spanArray = messageArray.map((value, index) => {
     const isNumber = typeof value === 'number';
-    
     const classes = classNames(cssClasses.text, {
       [cssClasses.number ?? '']: isNumber
     });

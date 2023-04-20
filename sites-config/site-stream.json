@@ -15,7 +15,11 @@
     "c_footerCountact",
     "c_footerNavigation",
     "c_footerSocial",
-    "c_corporateOffice"
+    "c_corporateOffice",
+    "c_headersubMenuOne",
+    "c_headerSubMenuTwo",
+    "c_headerSubMenuThree",
+    "c_headerSubMenuFour"
   ],
   "localization": {
     "locales": ["en"],

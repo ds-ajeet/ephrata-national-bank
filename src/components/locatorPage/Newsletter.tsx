@@ -40,7 +40,7 @@ export default function Newsletter(){
       }
       
     }
-    function onChange(value) {
+    function onChange(value: any) {
         console.log("Captcha value:", value);
       }
   

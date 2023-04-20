@@ -16,7 +16,6 @@ const BreadCrumbs = (props: data) => {
   var data: any = [];
   React.useEffect(() => {
     setURL(props.parents, props.baseUrl);
-  console.log(props.parents)
   }, [setList]);
 
   const setURL = (parents: any, baseUrl: any) => {
@@ -63,7 +62,7 @@ const BreadCrumbs = (props: data) => {
           data-ya-track="Breadcrumbs"
           eventName={`Breadcrumbs`}
           rel="noopener noreferrer"
-          conversionDetails={conversionDetailsDirection}
+          conversionDetails={conversionDetailsDirection} 
           > {crumb.name}</Link>
           :<Link href={baseUrl + crumb.slug + ".html"}
           data-ya-track="Breadcrumbs"
@@ -91,9 +90,6 @@ const BreadCrumbs = (props: data) => {
             <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
             </Link>
           </li>
-          {/* <li>
-            <a href="https://main-sushi--issue--quotation-sbx-pgsdemo-com.sbx.preview.pagescdn.com/">Store Locator</a>
-          </li> */}
           {list ? (
             list
           ) : (

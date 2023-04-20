@@ -317,7 +317,7 @@ function UnwrappedGoogleMaps({
       if (!info) {
         markers1.current[i].setIcon(Hovermap);
       }
-      locationResults.map((result, index) => {
+      locationResults.map((result: any, index: number) => {
         if (i == index) {
           const resultelement = document.querySelectorAll(
             `.result-list-inner-${index + 1}`
@@ -328,6 +328,7 @@ function UnwrappedGoogleMaps({
             resultelement[index].classList.add("fixed-hover");
           }
           const position = getPosition(locationResults[index]);
+          console.log(position,"position")
           map.setCenter(position);
           Infowindow(i, result);
           scrollToRow(index);

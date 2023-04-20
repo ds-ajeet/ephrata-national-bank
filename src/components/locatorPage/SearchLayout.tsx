@@ -1,4 +1,4 @@
-import { useSearchActions } from "@yext/search-headless-react";
+import { Matcher, SelectableFilter, useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from "react";
 import * as React from "react";
 import {
@@ -80,6 +80,7 @@ const SearchLayout = (props: any): JSX.Element => {
           params1 = params;
           SetNewparam(params1);
           mapzoom = 3;
+          
           searchActions.setUserLocation(params1);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
           searchActions.executeVerticalQuery();
@@ -96,6 +97,23 @@ const SearchLayout = (props: any): JSX.Element => {
     };
     SetNewparam(params1);
     // mapzoom=8;
+
+// Bound location listing in givin condition meand bound 100km aur miles 
+   
+// const locationFilter: SelectableFilter = {
+    //   selected: true,
+    //   fieldId: "builtin.location",
+    //   value: {
+    //     lat: params1.latitude,
+    //     lng: params1.longitude,
+    //     radius: 1000000,
+    //   },
+
+    //  matcher: Matcher.Near,
+    // };
+    // searchActions.setStaticFilters([locationFilter]);
+// end of bounding location 
+
     searchActions.setUserLocation(params1);
     searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
     // searchActions.setVerticalRadius(AnswerExperienceConfig.locationRadius);
@@ -105,6 +123,7 @@ const SearchLayout = (props: any): JSX.Element => {
       $("body").removeClass("overflow-hidden");
     }, 3100);
   };
+  console.log(searchActions,"searchAction")
 
 
   const onClick = () => {

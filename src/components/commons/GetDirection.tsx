@@ -41,7 +41,6 @@ const GetDirection = (props: GetDirection) => {
       };
       navigator.geolocation.getCurrentPosition(
         function (position) {
-          console.log("current lat lang");
           let currentLatitude = position.coords.latitude;
           let currentLongitude = position.coords.longitude;
           let getDirectionUrl =
@@ -82,10 +81,10 @@ const GetDirection = (props: GetDirection) => {
                     </Link>
     {/* <a
      onClick={getDirectionUrl} className="btn notHighlight" rel="noopener noreferrer" >
-      <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
+      <div dangerouslySetInnerHTML={{__html: Directionsvg}}/>
     
     
-    {/* </a> */}
+    </a> */}
     </>
 
   );

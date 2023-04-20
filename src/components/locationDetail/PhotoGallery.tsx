@@ -9,9 +9,9 @@ const PhotoGallery = (props: any) => {
     return (
     <div className="page-content">
       <img src={element.image.url} alt=""/>
-      <span>
+     
         <h1>{element.description}</h1>
-      </span>
+      
     </div>)
 });
 

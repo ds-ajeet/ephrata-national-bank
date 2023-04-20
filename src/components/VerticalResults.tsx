@@ -65,6 +65,7 @@ export default function VerticalResults(props: VerticalResultsProps): JSX.Elemen
 
   const { displayAllOnNoResults = false, allowPagination = true, ...otherProps } = props;
   const verticalResults = props.locationResults || [];
+  console.log(verticalResults,"verticalResults")
   // const verticalResults = useSearchState(s => s.vertical.results) || [];
   const allResultsForVertical = useSearchState(state => state.vertical?.noResults?.allResultsForVertical.results) || [];
   const verticalResultsCount = useSearchState(state => state.vertical.resultsCount) || 0;

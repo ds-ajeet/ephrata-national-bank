@@ -81,7 +81,6 @@ export const OpenStausFunctions = {
             nowTimeNumber < endIntervalNumber
           ) {
             currentInterval = interval;
-            // console.log(currentInterval, endIntervalNumber);
             openRightNow = true;
           }
         }

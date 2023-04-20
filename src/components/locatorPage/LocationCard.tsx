@@ -57,7 +57,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     }
   }
 
-  const { address, hours, additionalHoursText, timezone, c_specific_day } =
+  const { address, hours, additionalHoursText, timezone } =
     result.rawData;
   var name: any = result.rawData.name?.toLowerCase();
   // let name1:any=country+"/"+finalregion+"/"+finalcity+"/"+result.rawData.slug+".html";
@@ -114,6 +114,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 <span className="map-count  text-lg">E</span>
               </div>
               {/* {result.index}  */}
+             
 
               <h2>
                 <Link
