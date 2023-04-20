@@ -162,7 +162,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           }`,
         },
       },
-      
+
       //   // /og tags
 
       {
@@ -269,7 +269,6 @@ const City: Template<TemplateRenderProps> = ({
     slugString += e.slug + "/";
   });
 
-
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
     var origin: any = null;
     if (entity.address.city) {
@@ -337,7 +336,9 @@ const City: Template<TemplateRenderProps> = ({
               <img className=" " src={Phonesvg} width="20" height="20" alt="" />
             </div>
             <div className="content-col ml-10">
-              <a href={`tel:${entity.mainPhone}`}>{formatPhoneNumber(entity.mainPhone)}</a>
+              <a href={`tel:${entity.mainPhone}`}>
+                {formatPhoneNumber(entity.mainPhone)}
+              </a>
             </div>
           </div>
         ) : (
