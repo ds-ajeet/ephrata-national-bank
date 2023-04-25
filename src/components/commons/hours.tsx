@@ -326,7 +326,7 @@ const DayRow = (props: DayRow) => {
         <td className="dayTime" >
           {Status
             ? holidayopenintervals &&
-              holidayopenintervals.map((res: any) => {
+              holidayopenintervals?.map((res: any) => {
                 return res?.map((openint: any,index:any) => {
                   return (
                     <>
@@ -336,7 +336,7 @@ const DayRow = (props: DayRow) => {
                         </div>
                       ) : (
                         openint?.openIntervals &&
-                        openint.openIntervals.map((res: any,index:any) => {
+                        openint.openIntervals?.map((res: any,index:any) => {
                           return (
                             <>
                               <div className="time-group" key={index}>
@@ -361,7 +361,7 @@ const DayRow = (props: DayRow) => {
                 });
               })
             : day.openIntervals &&
-              day.openIntervals.map((res: any, index: number) => {
+              day.openIntervals?.map((res: any, index: number) => {
                 return (
                   <>
                     <div className="time-group" key={index}>
@@ -383,8 +383,8 @@ const DayRow = (props: DayRow) => {
           <td className="dayTime">
             {holidayopenintervals &&
               holidayopenintervals.map((res: any) => {
-                return res.map((openint: any) => {
-                  return openint.openIntervals.map((res: any,index:number) => {
+                return res?.map((openint: any) => {
+                  return openint.openIntervals?.map((res: any,index:number) => {
                     return (
                       <>
                         <div className="time-group" key={index}>

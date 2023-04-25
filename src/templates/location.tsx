@@ -581,7 +581,6 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               </div>
             </div> */}
-
             <div className="nearby-sec">
               <div className="container bg-white">
                 {/* <div className="sec-title pt-4">

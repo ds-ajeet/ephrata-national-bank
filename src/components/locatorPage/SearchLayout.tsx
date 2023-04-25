@@ -438,14 +438,16 @@ const SearchLayout = (props: any): JSX.Element => {
                 ""
               )}
               <div className="button-bx">
-                <ViewMore
+                {/* This is a ViewMore button */}
+                {/* <ViewMore
                   className={
                     " btn notHighlight lg:!w-[132%] !mb-2 button view-more"
                   }
                   idName={"view-more-button"}
                   buttonLabel={"View More"}
-                />
+                /> */}
               </div>
+              <div  className="pagination-button"><Pagination /></div>
             </div>
           </PerfectScrollbar>
         </div>

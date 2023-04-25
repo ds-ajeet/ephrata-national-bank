@@ -8,9 +8,10 @@ import {
   TemplateConfig,
 } from "@yext/pages";
 import * as React from "react";
-import { favicon } from "../../sites-global/global";
+import { breadcrumbhome, conversionDetailsDirection, favicon } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
 import PageLayout from "../components/layouts/PageLayout";
+import { Link } from "@yext/pages/components";
 export const config: TemplateConfig = {
   stream: {
     $id: "404",
@@ -63,8 +64,34 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
+        
         <div className="content-list">
           <div className="container">
+
+          {/* breadcrumb start  */}
+          <div className="breadcrumb">
+          <ul className="flex">
+          <li>
+            <Link className="home" href="/"
+             data-ya-track="Breadcrumbs"
+             eventName={`Breadcrumbs`}
+             rel="noopener noreferrer"
+             conversionDetails={conversionDetailsDirection}>
+            <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
+            
+            </Link>
+          </li>
+          
+                
+              
+             
+          <span>  404 Page </span>
+
+        </ul>
+        
+            </div>
+{/* end of BreadCrumbs              */}
+
             <div className="sec-title text-center">
               <h1 className="" style={{ textAlign: "center" }}>
                 {StaticData.PagenotFound}

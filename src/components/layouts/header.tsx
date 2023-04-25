@@ -2,6 +2,7 @@ import * as React from "react";
 import FilterSearch from "../locatorPage/FilterSearch";
 import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
+import { uriTransformer } from "react-markdown";
 type props = {
   data1: any;
   data: any;
@@ -54,11 +55,13 @@ const Header = (props: any) => {
         <div className="headermenu">
           <div className="header flex ">
             <div className="headerlogo">
+              <a href="#">
               <img
                 src={props._site?.c_headermenus.logo.url}
                 alt="logo"
                 width="330"
               />
+              </a>
             </div>
 
             <div className="header-secound menu ">
@@ -67,8 +70,8 @@ const Header = (props: any) => {
                   (del: any, index: number) => {
                     return (
                       <>
-                        <div className="navbar">
-                          <div className="dropdown">
+                        {/* <div className="navbar">
+                          <div className="dropdown"> */}
                             <button
                               type="button"
                               className="p-[20px] text-white"
@@ -76,7 +79,8 @@ const Header = (props: any) => {
                             >
                               {del?.label}
                             </button>
-                            <div className="dropdown-content">
+                            {/* commented code is a submenu concept */}
+                            {/* <div className="dropdown-content">
                               <div className="rows">
                                 <div className="columns">
                                   <div className="text-black pt-8">
@@ -169,9 +173,9 @@ const Header = (props: any) => {
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
+                            </div> */}
+                          {/* </div> */}
+                        {/* </div> */}
                       </>
                     );
                   }
@@ -185,3 +189,4 @@ const Header = (props: any) => {
   );
 };
 export default Header;
+

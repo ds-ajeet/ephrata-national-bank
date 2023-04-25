@@ -70,7 +70,7 @@ export const config: TemplateConfig = {
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   var url: any = "";
-  document.dm_directoryParents.map((i: any) => {
+  document.dm_directoryParents?.map((i: any) => {
     if (i.meta.entityType.id == "ce_country") {
       url = `${i.slug}`;
     } else if (i.meta.entityType.id == "ce_region") {

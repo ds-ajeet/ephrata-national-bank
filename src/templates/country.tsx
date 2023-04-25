@@ -18,6 +18,7 @@ import PageLayout from "../components/layouts/PageLayout";
 import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
 import Header from "../components/layouts/header";
 import Footer from "../components/layouts/footer";
+import { Link } from "@yext/pages/components";
 
 
 

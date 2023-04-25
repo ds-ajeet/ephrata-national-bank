@@ -13,8 +13,8 @@ import {
 } from "../../hooks/useComposedCssClasses";
 import Mapicon2 from "../../images/MGMpin.svg";
 import clustericon from "../../images/cluster-n.png";
-import mapimage from "../../images/map.svg";
-import timesvg from "../../images/watch-icn.svg";
+// import mapimage from "../../images/map.svg";
+// import timesvg from "../../images/watch-icn.svg";
 import Hovermap from "../../images/MGMhover.svg"
 import Hours from "../commons/hours";
 import reactElementToJSXString from "react-element-to-jsx-string";
@@ -26,8 +26,8 @@ import Opening from "../commons/openClose";
 import GetDirection from "../commons/GetDirection";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import Address from "../commons/Address";
-import Phonesvg from "../../images/phone.svg";
-import { ResultsCount } from "@yext/search-ui-react";
+// import Phonesvg from "../../images/phone.svg";
+// import { ResultsCount } from "@yext/search-ui-react";
 import OpenClose from "../commons/openClose";
 import $ from "jquery";
 import { Directionsvg, View_Store } from "../../../sites-global/global";
@@ -170,7 +170,7 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
-  function zoomMapTo(zoomTo, centerToSet = false) {
+  function zoomMapTo(zoomTo: number, centerToSet = false) {
     currentMapZoom = map.getZoom();
     const newZoom =
       currentMapZoom > zoomTo ? currentMapZoom - 1 : currentMapZoom + 1;
@@ -328,12 +328,12 @@ function UnwrappedGoogleMaps({
             resultelement[index].classList.add("fixed-hover");
           }
           const position = getPosition(locationResults[index]);
-          console.log(position,"position")
           map.setCenter(position);
           Infowindow(i, result);
           scrollToRow(index);
         }
-        map?.setZoom(13);
+        // info window zoom maximun 20-25
+        map?.setZoom(20);
 
         infoWindow.current.open(map, markers1.current[i]);
       });
@@ -378,9 +378,9 @@ function UnwrappedGoogleMaps({
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  const hours = (result: any) => {
-    return <Hours hours={result} />;
-  };
+  // const hours = (result: any) => {
+  //   return <Hours hours={result} />;
+  // };
   function addActiveGrid(index: any) {
     const elements = document.querySelectorAll(".result");
     for (let index = 0; index < elements.length; index++) {
