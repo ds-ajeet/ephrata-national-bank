@@ -162,18 +162,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
               </div>
 
               {/* </Link> */}
-
-              {/*<div className="pt-2">
-           
-
-                
-              
-                <Model
-                  name={StaticData.Holdiay}
-                  holidayHours={hours?.holidayHours}
-                />
-              </div>*/}
-
               <div className="pt-2 pb-2">
                 {/* this section is open cloase house in loaction card */}
                 <div className="open-close ">
@@ -224,14 +212,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             {/* close the open hourse? */}
 
             <div className="button-bx">
-              {/* <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
-              data-ya-track={`viewStore -${result.rawData.name}`}
-              eventName={`viewStore -${result.rawData.name}`}
-              rel="noopener noreferrer"
-              >
-                <div dangerouslySetInnerHTML={{__html: View_Store}}/>
-                {StaticData.StoreDetailbtn}
-              </Link> */}
               <Link
                 type="button"
                 href={`tel:${result.rawData.mainPhone}`}

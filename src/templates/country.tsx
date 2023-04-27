@@ -287,9 +287,7 @@ const country: Template<TemplateRenderProps> = ({
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
         ></BreadCrumbs>
-        {/* <div className="location-dtl">
-          <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
-        </div> */}
+      
 
 
 

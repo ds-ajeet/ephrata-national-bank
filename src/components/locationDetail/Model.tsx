@@ -5,6 +5,7 @@ import { Cross } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import Holidayhours from "./Holdayhours";
 
+// custom css for holiday hours
 const customStyles = {
   content: {
     top: "50%",
@@ -35,6 +36,7 @@ function Model(props: any) {
   }
 
   function closeModal() {
+    // close modal 
     document.body.classList.remove("overflow-hidden");
     setIsOpen(false);
   }
@@ -42,7 +44,7 @@ function Model(props: any) {
   var day;
   return(
     <>
-  {props.holidayHours.map((res:any,index:Number)=>{
+  {props.holidayHours.map((res:any,index:number)=>{
     const d = new Date(res.date);
      day = d.getDay();
     let a,s,holidayDate:any;
@@ -53,23 +55,13 @@ function Model(props: any) {
      }
 return a.map(format).join(s);
   } 
-
-//  /* a = [ {day: '2-digit'},{month: 'numeric'},{year: 'numeric'}];
-//   s = join(new Date(), a, '-');  
-//   console.log(new Date(join(new Date(res.date), a, '-')).getTime(),new Date(s).getTime())
-//       if(new Date(join(new Date(res.date), a, '-')).getTime()>=new Date(s).getTime()){
-// */
-
     var d1 = new Date();
-    var d2 = new Date(res.date);
+    var d2 = new Date(res.date); // yestarday and tomorrow date time
  
     if(d2.getDate() >= d1.getDate()){    
    
   return (
     <>
-     
-     
-
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -108,11 +100,11 @@ return a.map(format).join(s);
 })
 
 }
+{/* click open modal   */}
 <a onClick={openModal} className="text-link" id="holidaybtn" href="javascript:void(0);">
         {props.name}
       </a>
 </>
   )
 }
-
 export default Model;

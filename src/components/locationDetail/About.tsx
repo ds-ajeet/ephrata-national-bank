@@ -3,20 +3,23 @@ import * as React from "react";
 import RtfConverter from "@yext/rtf-converter";
 
 export default function About(props: any) {
-  //   function convertToRtf(rtf:any) {
-  //     rtf = rtf.replace(/\\par[d]?/g, "");
-  //     rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "")
-  //     rtf=rtf.replace('/','');
-  //     rtf=rtf.replace(';','');
-  //     rtf=rtf.replace('-','');
-  //     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
-  // }
+  function convertToRtf(rtf: any) {
+    rtf = rtf.replace(/\\par[d]?/g, "");
+    rtf = rtf.replace(
+      /\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g,
+      ""
+    );
+    rtf = rtf.replace("/", "");
+    rtf = rtf.replace(";", "");
+    rtf = rtf.replace("-", "");
+    return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+  }
   return (
     <>
       <div className="about-sec ">
         <div className="container-custom">
           <div className="about-inner-sec flex">
-            <div className="about-content " >
+            <div className="about-content ">
               <strong className="location-established">
                 {props.c_about.labelYear}
               </strong>
@@ -26,16 +29,12 @@ export default function About(props: any) {
                 </h2>
               </div>
               <div className="mt-8 ml-8 about-discription">
-              <p>{props.c_about.description}</p>
-              <p>{props.c_about.descriptionTwo}</p>
-              <p>{props.c_about.descriptionthree}</p>
-              <p>{props.c_about.descriptionFour}</p>
+                <p>{props.c_about.description}</p>
+                <p>{props.c_about.descriptionTwo}</p>
+                <p>{props.c_about.descriptionthree}</p>
+                <p>{props.c_about.descriptionFour}</p>
+              </div>
             </div>
-          
-            </div>
-            
-            
-            {/* <div className="bg-red">fdg</div> */}
           </div>
         </div>
       </div>

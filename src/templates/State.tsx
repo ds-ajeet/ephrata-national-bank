@@ -243,6 +243,7 @@ const region: Template<TemplateRenderProps> = ({
   const childrenDivs = dm_directoryChildren
     ? dm_directoryChildren.map((entity: any) => {
         let detlslug = "";
+        
 
         if (typeof entity.dm_directoryChildren != "undefined") {
           if (entity.dm_baseEntityCount == 1) {
@@ -255,16 +256,13 @@ const region: Template<TemplateRenderProps> = ({
                 let slug = slugString;
                 detlslug1 = `${slug}.html`;
               } else {
-                detlslug1 = slug + "/" + entity.slug + "/" + res.id + ".html";
-                // detlslug1 = `/${res.slug.toString()}.html`;
-                // console.log(detlslug1,"d1state")
+                detlslug1 = slug + "/" + entity.slug + "/" + res.id + ".html"; // singal city  in state 
               }
 
               detlslug = detlslug1;
             });
           } else {
-            detlslug = slug + "/" + entity.slug + ".html";
-            // console.log(detlslug,"state")
+            detlslug = slug + "/" + entity.slug + ".html"; // above one city slug
           }
         }
 
@@ -276,6 +274,7 @@ const region: Template<TemplateRenderProps> = ({
               href={detlslug.toLowerCase()}
             >
               {entity.name} ({entity.dm_baseEntityCount})
+              
             </a>
           </li>
         );

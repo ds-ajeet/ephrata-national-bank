@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
     return(
      <>
-      {props.hours.map((res:any,index:Number)=>{
+      {props.hours.map((res:any,index:number)=>{
        const weeks=[
          "Sunday",
          "Monday",
@@ -25,7 +25,7 @@ import { useEffect } from "react";
         }
    return a.map(format).join(s);
      } 
-   
+    // array of object store value in variable 
      a = [ {day: '2-digit'},{month: 'numeric'},{year: 'numeric'}];
     //  s = join(new Date(), a, '-');  
      var d1 = new Date();
@@ -37,11 +37,10 @@ import { useEffect } from "react";
             <div className="pop-up-holyhrs">
                 <div>{join(new Date(res.date), a, '-') }</div>         
                 <div>{weeks[day]}</div> 
-                {/* {console.log(res)}   */}
                 {res.isClosed?<span className="cl-time">
                       Closed
                     </span>:<>   
-                {res.openIntervals&&res.openIntervals.map((openinterval: any, index: Number) => {
+                {res.openIntervals&&res.openIntervals.map((openinterval: any, index: number) => {
                   
                   return (
                     <>

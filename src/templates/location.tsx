@@ -1,6 +1,4 @@
 import * as React from "react";
-import Banner from "../components/locationDetail/banner";
-import Cta from "../components/commons/cta";
 import Contact from "../components/locationDetail/contact";
 import ApiCall from "../Apis/ApiCall";
 import Nearby from "../components/locationDetail/Nearby";
@@ -8,7 +6,6 @@ import { CustomFieldDebuggerReactProvider } from "@yext/custom-field-debugger";
 import { JsonLd } from "react-schemaorg";
 import Opening from "../components/commons/openClose";
 import { nearByLocation } from "../types/nearByLocation";
-import Logo from "../images/logo-header.svg";
 import IframeMap from "../components/locationDetail/IframeMap";
 import "../index.css";
 import {
@@ -52,7 +49,6 @@ import {
 } from "@yext/pages/components";
 import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
-import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Email from "../components/locationDetail/coutactemail";
 import Hours from "../components/commons/hours";
@@ -375,7 +371,6 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            // console.log(j, "j");
             url = url + j.slug;
           }
         });
@@ -399,7 +394,6 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            // console.log(j, "j");
             url = url + "/" + j.slug;
           }
         });
@@ -502,7 +496,9 @@ const Location: Template<ExternalApiRenderData> = ({
                         <p>{document.c_about.descriptionFour}</p>
                       </div>
                       <div className="store-open-hours">
-                        <h4 className="box-title">{"Branch Opening Details"}</h4>
+                        <h4 className="box-title">
+                          {"Branch Opening Details"}
+                        </h4>
 
                         <Hours
                           title={"Store Opening Hours"}
@@ -510,8 +506,6 @@ const Location: Template<ExternalApiRenderData> = ({
                           hours={hours}
                           c_specific_day={c_specific_day}
                         />
-                        
-
                       </div>
                     </div>
 
@@ -534,34 +528,13 @@ const Location: Template<ExternalApiRenderData> = ({
                           hours={hours}
                           additionalHoursText={additionalHoursText}
                         ></Contact>
-
-                        {/* {hours ? ( 
-                <div className="map-sec" id="map_canvas">
-                  <CustomMap
-                    prop={
-                      yextDisplayCoordinate
-                        ? yextDisplayCoordinate
-                        : displayCoordinate
-                    }
-                  />
-                </div>
-              ) : (
-                <div className="map-sec without-hours" id="map_canvas">
-                  <CustomMap
-                    prop={
-                      yextDisplayCoordinate
-                        ? yextDisplayCoordinate
-                        : displayCoordinate
-                    }
-                  />
-                </div>
-              )} */}
                       </div>
                     </>
                   </div>
                 </div>
               </div>
             </div>
+            {/* faq section  */}
             {c_faq ? (
               <div className="w-full  pt-8">
                 <h4 className="sec_heading  text-[30px] text-center pt-4">
@@ -572,20 +545,8 @@ const Location: Template<ExternalApiRenderData> = ({
             ) : (
               <></>
             )}
-
-            {/* <div className="container">
-              <div className="banner-text banner-dark-bg justify-center text-center">
-                <h1 className="">{name}</h1>
-                <div className="openClosestatus detail-page closeing-div">
-                  <OpenClose timezone={timezone} hours={hours} />
-                </div>
-              </div>
-            </div> */}
             <div className="nearby-sec">
               <div className="container bg-white">
-                {/* <div className="sec-title pt-4">
-                  <h2 className="">{StaticData.NearStoretext}</h2>
-                </div>  */}
                 <div className="nearby-sec-inner">
                   {yextDisplayCoordinate ||
                   cityCoordinate ||
@@ -597,7 +558,6 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               </div>
             </div>
-
             <Email c_countact={c_countact} />
           </PageLayout>
         </AnalyticsScopeProvider>

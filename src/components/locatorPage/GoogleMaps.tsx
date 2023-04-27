@@ -1,5 +1,4 @@
 import { Wrapper } from "@googlemaps/react-wrapper";
-// import { Result, useAnswersState } from '@yext/answers-headless-react';
 import {
   useSearchState,
   Result,
@@ -13,21 +12,11 @@ import {
 } from "../../hooks/useComposedCssClasses";
 import Mapicon2 from "../../images/MGMpin.svg";
 import clustericon from "../../images/cluster-n.png";
-// import mapimage from "../../images/map.svg";
-// import timesvg from "../../images/watch-icn.svg";
 import Hovermap from "../../images/MGMhover.svg"
-import Hours from "../commons/hours";
-import reactElementToJSXString from "react-element-to-jsx-string";
-import Nav from "../layouts/Nav";
 import UserMarker from "../../images/map-center.svg";
 import { renderToString } from "react-dom/server";
-import LocationCard from "./LocationCard";
-import Opening from "../commons/openClose";
-import GetDirection from "../commons/GetDirection";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import Address from "../commons/Address";
-// import Phonesvg from "../../images/phone.svg";
-// import { ResultsCount } from "@yext/search-ui-react";
 import OpenClose from "../commons/openClose";
 import $ from "jquery";
 import { Directionsvg, View_Store } from "../../../sites-global/global";
@@ -170,6 +159,7 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
+
   function zoomMapTo(zoomTo: number, centerToSet = false) {
     currentMapZoom = map.getZoom();
     const newZoom =
@@ -362,7 +352,7 @@ function UnwrappedGoogleMaps({
       setHover(true);
       info = false;
       infoWindow.current.close();
-      locationResults.map((result, index) => {
+      locationResults.map((result:any, index:number) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`
         );
@@ -370,17 +360,14 @@ function UnwrappedGoogleMaps({
           resultelement[index].classList.remove("active", "fixed-hover");
         }
       });
-      map?.setZoom(10);
+      // locator listing clcik zoom info window
+      map?.setZoom(20);
     });
   }
 
   function sleep(ms: any) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
-
-  // const hours = (result: any) => {
-  //   return <Hours hours={result} />;
-  // };
   function addActiveGrid(index: any) {
     const elements = document.querySelectorAll(".result");
     for (let index = 0; index < elements.length; index++) {
@@ -429,6 +416,7 @@ function UnwrappedGoogleMaps({
     marker_icon: any
   ) {
     const elements = document.querySelectorAll(".result");
+    // for that locator listing open infowindow
     for (let index = 0; index < elements.length; index++) {
       if (!elements[index].classList.contains("markerEventBinded")) {
         elements[index].classList.add("markerEventBinded");
@@ -441,7 +429,7 @@ function UnwrappedGoogleMaps({
             }
             $(".result").removeClass("fixed-hover");
             // console.log('refLocationResults', refLocationResults);
-            refLocationResults.current.map((result, i) => {
+            refLocationResults.current.map((result:any, i:any) => {
               if (i == index) {
                 setHover(false);
                 isHover = false;
@@ -461,7 +449,7 @@ function UnwrappedGoogleMaps({
                     : result.rawData.displayCoordinate.longitude,
                 };
 
-                map?.setZoom(13);
+                map?.setZoom(20);
                 map?.setCenter(position);
                 Infowindow(i, result);
                 infoWindow.current.open(map, markers1.current[index]);
@@ -497,16 +485,13 @@ function UnwrappedGoogleMaps({
       url = `${result.rawData.id}-${result1}.html`;
     } else {
       url = `/${main_result}`;
-      // console.log(url,"url")
     }
 
     const MarkerContent = (
       <>
         {" "}
         <div className="flex w-full flex-col max-w-[24rem] pl-4  md:w-[22.5rem] font-main-font text-xs sm:text-sm lg:text-base">
-          <div className="location-name-miles">
-            {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
-        alt="" /></div> */}
+          <div className="location-name-miles"> 
             <h2>
               <a className="inline-block notHighlight" href={`${url}`}>
                 {result.rawData.name}
@@ -524,17 +509,6 @@ function UnwrappedGoogleMaps({
               ""
             )}
           </div>
-          {/* {result.rawData.mainPhone?
-    <div className="icon-row">
-      <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
-      </div>
-      <div className="content-col">
-        <h6>Telephone</h6>
-        <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
-          {result.rawData.mainPhone}</a>
-      </div>
-    </div>:''} */}
-
           {result.rawData.hours && result.rawData.hours.reopenDate ? (
             ""
           ) : result.rawData.hours ? (
@@ -584,7 +558,6 @@ function UnwrappedGoogleMaps({
               data-country={result.rawData.address.countryCode}
               data-region={result.rawData.address.region}
             >
-              {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
               {StaticData.getDirection}
             </a>
           ) : (
@@ -598,12 +571,9 @@ function UnwrappedGoogleMaps({
               className="cursor-pointer getdirection1 btn"
               rel="noopener noreferrer"
             >
-              {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
               {StaticData.getDirection}
             </a>
           )}
-
-          {/* <GetDirection buttonText="Direction" latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude}/> */}
         </div>
       </>
     );
@@ -706,7 +676,6 @@ function scrollToRow(index: any) {
   const offset: any = [].slice.call(document.querySelectorAll(`.result`) || [])[
     index
   ];
-
   // alert(offset.offsetTop-result.offsetTop);
   const o = offset.offsetTop - result.offsetTop;
 
