@@ -143,7 +143,6 @@ export default function InputDropdown({
 
     const childProps = child.props as DropdownSectionProps;
     const modifiedOptions = childProps.options.map((option) => {
-      console.log(option,"children")
       const modifiedOnSelect = () => {
         setSearchInputValue("");
         setLatestUserInput(option.value);

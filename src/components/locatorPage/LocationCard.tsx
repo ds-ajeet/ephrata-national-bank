@@ -18,6 +18,7 @@ import locationmiles from "../../images/location-miles.svg";
 import Holidayhours from "../locationDetail/Holdayhours";
 import { formatPhoneNumber } from "react-phone-number-input";
 
+// convert to distance in miles
 const metersToMiles = (meters: number) => {
   const miles = meters * 0.000621371;
   return miles.toFixed(2);
@@ -37,25 +38,24 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   let url = "";
   const [hoursopen, setHoursopen] = React.useState(false);
 
-  function opentime(e: any) {
-    //console.log(e.target);
-    var closethis = e.target.closest(".lp-param-results");
-    if (
-      closethis
-        .querySelector(".storelocation-openCloseTime")
-        .classList.contains("hidden")
-    ) {
-      closethis
-        .querySelector(".storelocation-openCloseTime")
-        .classList.remove("hidden");
-      setHoursopen(true);
-    } else {
-      closethis
-        .querySelector(".storelocation-openCloseTime")
-        .classList.add("hidden");
-      setHoursopen(false);
-    }
-  }
+  // function opentime(e: any) {
+  //   var closethis = e.target.closest(".lp-param-results");
+  //   if (
+  //     closethis
+  //       .querySelector(".storelocation-openCloseTime")
+  //       .classList.contains("hidden")
+  //   ) {
+  //     closethis
+  //       .querySelector(".storelocation-openCloseTime")
+  //       .classList.remove("hidden");
+  //     setHoursopen(true);
+  //   } else {
+  //     closethis
+  //       .querySelector(".storelocation-openCloseTime")
+  //       .classList.add("hidden");
+  //     setHoursopen(false);
+  //   }
+  // }
 
   const { address, hours, additionalHoursText, timezone } =
     result.rawData;
@@ -90,8 +90,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     //  url= `/${result.rawData.slug.toString()}.html`;
     url = `/${main_result}`;
   }
-
-  // console.log(result.id,"fdsfgjk")
   return (
     <div
       className={`location result-list-inner-${result.id} result`}

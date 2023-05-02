@@ -1,4 +1,8 @@
-import { Matcher, SelectableFilter, useSearchActions } from "@yext/search-headless-react";
+import {
+  Matcher,
+  SelectableFilter,
+  useSearchActions,
+} from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from "react";
 import * as React from "react";
 import {
@@ -36,7 +40,7 @@ import ResultsCount from "./ResultsCount";
 import useFetchResults from "../../hooks/useFetchResults";
 import { Link } from "@mui/material";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
-
+// params1 get lat and long  user marker
 var params1: any = { latitude: center_latitude, longitude: center_longitude };
 var mapzoom = 8;
 var centerLatitude = center_latitude;
@@ -67,7 +71,7 @@ const SearchLayout = (props: any): JSX.Element => {
   var target;
 
   var firstTimeRunners = true;
-
+// listing view in first load
   const FirstLoad = () => {
     setCheck(true);
     if (navigator.geolocation) {
@@ -80,7 +84,7 @@ const SearchLayout = (props: any): JSX.Element => {
           params1 = params;
           SetNewparam(params1);
           mapzoom = 3;
-          
+
           searchActions.setUserLocation(params1);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
           searchActions.executeVerticalQuery();
@@ -98,9 +102,9 @@ const SearchLayout = (props: any): JSX.Element => {
     SetNewparam(params1);
     // mapzoom=8;
 
-// Bound location listing in givin condition meand bound 100km aur miles 
-   
-// const locationFilter: SelectableFilter = {
+    // Bound location listing in givin condition meand bound 100km aur miles
+
+    // const locationFilter: SelectableFilter = {
     //   selected: true,
     //   fieldId: "builtin.location",
     //   value: {
@@ -112,7 +116,7 @@ const SearchLayout = (props: any): JSX.Element => {
     //  matcher: Matcher.Near,
     // };
     // searchActions.setStaticFilters([locationFilter]);
-// end of bounding location 
+    // end of bounding location
 
     searchActions.setUserLocation(params1);
     searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
@@ -123,9 +127,8 @@ const SearchLayout = (props: any): JSX.Element => {
       $("body").removeClass("overflow-hidden");
     }, 3100);
   };
-  console.log(searchActions,"searchAction")
 
-
+// when your location not allow to use
   const onClick = () => {
     if (navigator.geolocation) {
       const error = (error: any) => {
@@ -161,7 +164,6 @@ const SearchLayout = (props: any): JSX.Element => {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           };
-
           mapzoom = 3;
           searchActions.setVertical("locations");
           searchActions.setUserLocation(params);
@@ -175,7 +177,7 @@ const SearchLayout = (props: any): JSX.Element => {
       );
     }
   };
-
+// 
   const Findinput = () => {
     let searchKey = document.getElementsByClassName("FilterSearchInput");
     let Search = searchKey[0].value;
@@ -203,7 +205,6 @@ const SearchLayout = (props: any): JSX.Element => {
       setCenterLongitude(center_longitude);
     }
   };
-  // console.log(handleSetUserShareLocation,"handleSetUserShareLocation")
 
   function getCoordinates(address: String) {
     setInputValue("");
@@ -236,9 +237,7 @@ const SearchLayout = (props: any): JSX.Element => {
     locationResults.map((result: any, index: number) => {
       const resultelement = document.querySelectorAll(
         `.result-list-inner-${index + 1}`
-        
       );
-      
 
       for (let index = 0; index < resultelement.length; index++) {
         if (
@@ -254,7 +253,7 @@ const SearchLayout = (props: any): JSX.Element => {
     if (firstTimeRunners) {
       firstTimeRunners = false;
       // searchActions.resetFacets();
-      FirstLoad();
+      // FirstLoad();
     }
   }, []);
 
@@ -300,11 +299,10 @@ const SearchLayout = (props: any): JSX.Element => {
               params={params1}
               searchOnSelect={true}
               searchFields={[
-                // {
-                //   entityType: "location",
-                //   fieldApiName: "address.line1",
-
-                // },
+                {
+                  entityType: "location",
+                  fieldApiName: "builtin.location",
+                },
                 {
                   entityType: "location",
                   fieldApiName: "address.postalCode",
@@ -327,7 +325,7 @@ const SearchLayout = (props: any): JSX.Element => {
 
                 // },
               ]}
-              handleInputValue={handleInputValue}
+              handleInputValue={handleInputValue} //that is hold on search result
               handleSetUserShareLocation={handleSetUserShareLocation}
             />
 
@@ -346,12 +344,9 @@ const SearchLayout = (props: any): JSX.Element => {
           <StandardFacets
   collapsible={true}
   defaultExpanded={false}
-  // excludedFieldIds={["c_categories"]}
 />
 
         </div> */}
-
-            
 
             <button
               className="useMyLocation"
@@ -439,15 +434,16 @@ const SearchLayout = (props: any): JSX.Element => {
               )}
               <div className="button-bx">
                 {/* This is a ViewMore button */}
-                <ViewMore
+                {/*<ViewMore
                   className={
                     " btn notHighlight lg:!w-[132%] !mb-2 button view-more"
                   }
                   idName={"view-more-button"}
                   buttonLabel={"View More"}
-                />
+                />*/}
               </div>
-              {/* <div  className="pagination-button"><Pagination /></div> */}
+              {/* pagination  */}
+               <div  className="pagination-button"><Pagination /></div> 
             </div>
           </PerfectScrollbar>
         </div>
