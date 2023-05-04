@@ -236,7 +236,6 @@ const region: Template<TemplateRenderProps> = ({
     slug,
     address,
     c_banner_image,
-    c_bannerHeading,
     dm_directoryParents,
     dm_directoryChildren,
   } = document;
@@ -248,9 +247,7 @@ const region: Template<TemplateRenderProps> = ({
         if (typeof entity.dm_directoryChildren != "undefined") {
           if (entity.dm_baseEntityCount == 1) {
             entity.dm_directoryChildren.map((res: any) => {
-              // console.log(res,"res")
               let detlslug1 = "";
-
               if (!res.slug) {
                 let slugString = res.id + "-" + res.name.toLowerCase();
                 let slug = slugString;
@@ -258,11 +255,10 @@ const region: Template<TemplateRenderProps> = ({
               } else {
                 detlslug1 = slug + "/" + entity.slug + "/" + res.id + ".html"; // singal city  in state 
               }
-
               detlslug = detlslug1;
             });
           } else {
-            detlslug = slug + "/" + entity.slug + ".html"; // above one city slug
+            detlslug = slug + "/" + entity.slug + ".html"; // above one city slug 
           }
         }
 
@@ -270,7 +266,7 @@ const region: Template<TemplateRenderProps> = ({
           <li className=" storelocation-category">
             <a
               key={entity.slug}
-              // href={stagingBaseurl  + detlslug}
+              // href={stagingBaseurl  + detlslug} // that line is base url find
               href={detlslug.toLowerCase()}
             >
               {entity.name} ({entity.dm_baseEntityCount})

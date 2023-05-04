@@ -302,7 +302,7 @@ const DayRow = (props: DayRow) => {
       {Status ? (
         <td className="dayName" key={key} >
           <span className="checked"></span> {dayName}*
-          {/* {c_specific_day &&
+          {c_specific_day &&
             c_specific_day.map((res: any) => {
               return (
                 <>
@@ -313,12 +313,12 @@ const DayRow = (props: DayRow) => {
                   )}
                 </>
               );
-            })} */}
+            })}
         </td>
       ) : (
         <td className="dayName " key={key}>
          
-          <span className="checked"></span> {dayName}
+          <span className="checked"></span> {dayName.slice(0,3)}
         </td>
       )}
 

@@ -262,8 +262,8 @@ export default function InputDropdown({
         setDisplaymsg(false);
         setLatestUserInput("");
         if (keyUpStatus) {
-          // searchActions.setVertical("");
           
+          // searchActions.setVertical("");   // input filed empty defult no result         
           searchActions.setQuery("");
           searchActions.setOffset(0);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
@@ -283,6 +283,7 @@ export default function InputDropdown({
       setKeyUpStatus(true);
     }
     if (!keyUpStatus) {
+      // input field empty no result 
       // searchActions.resetFacets();
       // setKeyUpStatus(false);
       // searchActions.setVertical("locations");

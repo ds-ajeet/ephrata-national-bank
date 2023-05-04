@@ -37,9 +37,9 @@ import { useEffect } from "react";
             <div className="pop-up-holyhrs">
                 <div>{join(new Date(res.date), a, '-') }</div>         
                 <div>{weeks[day]}</div> 
-                {res.isClosed?<span className="cl-time">
+                {res.isClosed?<div className="cl-time">
                       Closed
-                    </span>:<>   
+                    </div>:<>   
                 {res.openIntervals&&res.openIntervals.map((openinterval: any, index: number) => {
                   
                   return (

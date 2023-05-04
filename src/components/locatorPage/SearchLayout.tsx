@@ -71,12 +71,14 @@ const SearchLayout = (props: any): JSX.Element => {
   var target;
 
   var firstTimeRunners = true;
+
 // listing view in first load
   const FirstLoad = () => {
     setCheck(true);
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
+         
           const params: any = {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
@@ -100,9 +102,9 @@ const SearchLayout = (props: any): JSX.Element => {
       longitude: centerLongitude,
     };
     SetNewparam(params1);
-    // mapzoom=8;
+    // mapzoom=8; 
 
-    // Bound location listing in givin condition meand bound 100km aur miles
+    // Bound location listing in givin condition meand bound 60kilo aur miles first load
 
     // const locationFilter: SelectableFilter = {
     //   selected: true,
@@ -110,7 +112,7 @@ const SearchLayout = (props: any): JSX.Element => {
     //   value: {
     //     lat: params1.latitude,
     //     lng: params1.longitude,
-    //     radius: 1000000,
+    //     radius: 100000,
     //   },
 
     //  matcher: Matcher.Near,
@@ -338,8 +340,8 @@ const SearchLayout = (props: any): JSX.Element => {
               <span dangerouslySetInnerHTML={{ __html: search_icn }} />
             </button>
           </div>
-
           <div className="fliter-sec flex">
+           
             {/* <div className="bg-[#D21242] left-0">
           <StandardFacets
   collapsible={true}
