@@ -43,7 +43,7 @@ const Footer = (props: any) => {
               </span>
               <div>
                 <div className=" mt-2">
-                  {props._site?.c_footerNavigation.map((res: any) => {
+                  {props._site?.c_footerNavigation?.map((res: any) => {
                     return (
                       <>
                         <a href={res.link}>
@@ -95,7 +95,7 @@ const Footer = (props: any) => {
               <strong>{props._site?.c_footerCountact}</strong>
             </div>
             <div className="social-icon flex pt-4 gap-x-4">
-              {props._site?.c_footerSocial.map((del1: any) => (
+              {props._site?.c_footerSocial?.map((del1: any) => (
                 <>
                   <ul>
                     <li>
