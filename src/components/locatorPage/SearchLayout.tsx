@@ -130,6 +130,18 @@ const SearchLayout = (props: any): JSX.Element => {
     }, 3100);
   };
 
+  // const mapLoad = (index:number)=>{
+  //   setTimeout(() => {
+  //     setIsloading(true);
+  //     $("body").removeClass("overflow-hidden")
+      
+  //   }, 200);
+
+
+  // }
+  // console.log(mapLoad,"mapLoad")
+
+
 // when your location not allow to use
   const onClick = () => {
     if (navigator.geolocation) {
@@ -204,6 +216,7 @@ const SearchLayout = (props: any): JSX.Element => {
     setInputValue(value);
     if (userShareStatus) {
       setCenterLatitude(center_latitude);
+      // console.log(center_latitude,"centerLatitude")
       setCenterLongitude(center_longitude);
     }
   };
@@ -235,7 +248,6 @@ const SearchLayout = (props: any): JSX.Element => {
     }
   }, [locationinbuit]);
   useEffect(() => {
-    // console.log("yes rerender")
     locationResults.map((result: any, index: number) => {
       const resultelement = document.querySelectorAll(
         `.result-list-inner-${index + 1}`
@@ -342,13 +354,12 @@ const SearchLayout = (props: any): JSX.Element => {
           </div>
           <div className="fliter-sec flex">
            
-            {/* <div className="bg-[#D21242] left-0">
+            <div className="bg-[#D21242] left-0">
           <StandardFacets
   collapsible={true}
   defaultExpanded={false}
 />
-
-        </div> */}
+        </div>
 
             <button
               className="useMyLocation"

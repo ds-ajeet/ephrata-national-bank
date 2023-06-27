@@ -576,7 +576,10 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .city-page .nearby-sec-inner{@apply flex flex-col md:flex-row gap-3 flex-wrap justify-center pb-0 xl:pb-0 max-w-none }
 
-.city-page .nearby-card{@apply w-full md:w-[49%]  xl:w-[32%] bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-0  mb-0 lg:mt-0  lg:relative p-3 md:p-5 border border-box-border
+.city-page .nearby-card{@apply w-full md:w-[49%]  xl:w-[32%] bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-0  mb-6 lg:mt-0  lg:relative p-3 md:p-5 border border-box-border
+}
+.city-page .nearby-card{
+  box-shadow: 2px 4px 5px ;
 }
 
 .city-page .nearby-card .availability-col{ @apply md:w-full md:max-w-full lg:max-w-[60%] xl:max-w-full}

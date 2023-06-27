@@ -274,6 +274,7 @@ const country: Template<TemplateRenderProps> = ({
 
 
   let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
+    console.log(bannerimage,"bannerimage")
     return element.url
   }) : null;
 

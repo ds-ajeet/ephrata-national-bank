@@ -24,6 +24,7 @@ export default function ViewMore(props: viewMoreProps): JSX.Element | null {
     return null;
   }
   const pageNumber = (offset / limit) + 1;
+  console.log(pageNumber,"pageNumber")
   
   return (
     <>

@@ -280,11 +280,13 @@ const DayRow = (props: DayRow) => {
   }, []);
 
   let Status = false;
-  let boxday: any;
+  // let boxday: any;
+
   for (const key in myDataAccordintToMe) {
     if (key == dayDate) {
       Status = true;
       holidayopenintervals.push(myDataAccordintToMe[key]);
+      
     }
   }
 
