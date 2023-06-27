@@ -47,7 +47,7 @@ const Faq = (faqData: Faq) => {
         <div className="container mx-auto">
           <div className="faq-blocks">
             <div className="left-faq">
-              {faq_Data.map((i: any, index: any) => {
+              {faq_Data?.map((i: any, index: any) => {
                 return (
                   <div
                     id={index}
@@ -71,7 +71,7 @@ const Faq = (faqData: Faq) => {
                 );
               })}
             </div>
-            {faqData.c_fAQsCta && faqData.c_fAQsCta && (
+            {faqData?.c_fAQsCta && faqData?.c_fAQsCta && (
               <div className="mt-12 px-96 mx-16">
                 <Link
                   href={faqData.c_fAQsCta}

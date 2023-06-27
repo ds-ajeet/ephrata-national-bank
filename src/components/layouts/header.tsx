@@ -23,7 +23,7 @@ const Header = (props: any) => {
           <div className="container clear">
             <nav id="secondary-navigation" aria-label="site contact links">
               <ul id="menu-secondary-navigation" className="menu">
-                {props._site?.c_headerCta.map((res: any) => {
+                {props?._site?.c_headerCta.map((res: any) => {
                   return (
                     <>
                       <li>

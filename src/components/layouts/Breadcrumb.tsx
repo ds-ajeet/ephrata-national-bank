@@ -56,7 +56,7 @@ const BreadCrumbs = (props: data) => {
       }
 
 
-      breadcrumbs = data.map((crumb: any) => (
+      breadcrumbs = data?.map((crumb: any) => (
         <li key={crumb.slug}>
           {(crumb.count==1)?<Link href="javascript:void(0)" className="cursor-not-allowed"
           data-ya-track="Breadcrumbs"

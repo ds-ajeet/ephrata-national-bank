@@ -44,7 +44,7 @@ function Model(props: any) {
   var day;
   return(
     <>
-  {props.holidayHours.map((res:any,index:number)=>{
+  {props?.holidayHours?.map((res:any,index:number)=>{
     const d = new Date(res.date);
      day = d.getDay();
     let a,s,holidayDate:any;
@@ -53,7 +53,7 @@ function Model(props: any) {
      let f = new Intl.DateTimeFormat('en', m);
      return f.format(t);  
      }
-return a.map(format).join(s);
+return a?.map(format).join(s);
   } 
     var d1 = new Date();
     var d2 = new Date(res.date); // yestarday and tomorrow date time

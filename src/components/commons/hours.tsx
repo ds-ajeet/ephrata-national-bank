@@ -7,7 +7,7 @@ import { OpenStausFunctions } from "./openClose";
 
 type Hours = {
   title?: string;
-  hours?: Week;
+  hours?: Week | undefined ;
   c_specific_day: any;
   additionalHoursText?: string;
   children?: React.ReactNode;

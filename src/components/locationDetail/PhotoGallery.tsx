@@ -5,7 +5,7 @@ const PhotoGallery = (props: any) => {
  
 
 
-   const photos = props.photoGallery?.map((element:any) => {
+   const photos = props?.photoGallery?.map((element:any) => {
     return (
     <div className="page-content">
       <img src={element.image.url} alt=""/>
